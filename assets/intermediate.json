@@ -1,0 +1,207 @@
+[
+    {
+        "id" : 1,
+        "kalimat" : "Dia sudah bekerja di sini selama dua tahun.",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "He "
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "has been"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "working"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "here"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "for"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "two"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "year"
+            }
+        ],
+        "typeAns" : "F"
+    },
+    {
+        "id" : 2,
+        "kalimat" : "Mereka merencanakan liburan bulan depan.",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "They"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "are"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "planning"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "a vacation"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "next"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "month"
+            }
+        ],
+        "typeAns" : "E"
+    },
+    {
+        "id" : 3,
+        "kalimat" : "Saya akan menghubungi Anda saat saya tiba.",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "I"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "will"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "call"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "you"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "when"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "I"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "arrive"
+            }
+        ],
+        "typeAns" : "F"
+    },
+    {
+        "id" : 4,
+        "kalimat" : "Bisakah kamu membantu saya menyelesaikan masalah ini?",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "Can"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "you"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "help"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "me"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "solve"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "this"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "problem"
+            }
+        ],
+        "typeAns" : "F"
+    },
+    {
+        "id" : 5,
+        "kalimat" : "Film yang kita tonton tadi malam sangat menarik.",
+        "words" : [
+            {
+                "id" : 1,
+                "cursor" : false,
+                "word" : "The movie"
+            },
+            {
+                "id" : 2,
+                "cursor" : false,
+                "word" : "we"
+            },
+            {
+                "id" : 3,
+                "cursor" : false,
+                "word" : "watched"
+            },
+            {
+                "id" : 4,
+                "cursor" : false,
+                "word" : "last"
+            },
+            {
+                "id" : 5,
+                "cursor" : false,
+                "word" : "night"
+            },
+            {
+                "id" : 6,
+                "cursor" : false,
+                "word" : "was"
+            },
+            {
+                "id" : 7,
+                "cursor" : false,
+                "word" : "interesting"
+            }
+        ],
+        "typeAns" : "F"
+    }
+]

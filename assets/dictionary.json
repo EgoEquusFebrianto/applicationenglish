@@ -1,0 +1,1801 @@
+[
+    {
+        "id": "1",
+        "word": "able",
+        "translate": [
+            "sanggup"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "2",
+        "word": "achieve",
+        "translate": [
+            "meraih"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "3",
+        "word": "achievement",
+        "translate": [
+            "prestasi"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "4",
+        "word": "amongts",
+        "translate": [
+            "diantara"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "5",
+        "word": "amount",
+        "translate": [
+            "jumlah"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "6",
+        "word": "amount",
+        "translate": [
+            "berjumlah"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "7",
+        "word": "comfortable",
+        "translate": [
+            "nyaman"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "8",
+        "word": "conquer",
+        "translate": [
+            "menaklukkan",
+            "menundukkan",
+            "membasmi"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "9",
+        "word": "considered",
+        "translate": [
+            "dipertimbangkan",
+            "yang dihormat"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "10",
+        "word": "deceit",
+        "translate": [
+            "penipu"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "11",
+        "word": "deceitful",
+        "translate": [
+            "bohong"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "12",
+        "word": "definitely",
+        "translate": [
+            "tentu saja",
+            "pasti"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "13",
+        "word": "disruption",
+        "translate": [
+            "gangguan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "14",
+        "word": "due to the",
+        "translate": [
+            "karena"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "15",
+        "word": "effort",
+        "translate": [
+            "usaha"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "16",
+        "word": "entrace",
+        "translate": [
+            "jalan masuk"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "17",
+        "word": "entrace",
+        "translate": [
+            "mempesona"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "18",
+        "word": "equate",
+        "translate": [
+            "mempersama-samakan",
+            "menyamakan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "19",
+        "word": "except",
+        "translate": [
+            "kecuali"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "20",
+        "word": "except",
+        "translate": [
+            "mengecualikan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "21",
+        "word": "exception",
+        "translate": [
+            "pengecualian"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "22",
+        "word": "further",
+        "translate": [
+            "lebih lanjut",
+            "lebih jauh",
+            "selanjutnya"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "23",
+        "word": "furthermore",
+        "translate": [
+            "selain itu",
+            "terlebih lagi",
+            "selanjutnya"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "24",
+        "word": "guarantee",
+        "translate": [
+            "jaminan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "25",
+        "word": "guarantee",
+        "translate": [
+            "menjadi"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "26",
+        "word": "include",
+        "translate": [
+            "termasuk",
+            "berisi"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "27",
+        "word": "embrance",
+        "translate": [
+            "merangkum",
+            "merangkul"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "28",
+        "word": "insert",
+        "translate": [
+            "memasukkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "29",
+        "word": "mistake",
+        "translate": [
+            "kesalahan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "30",
+        "word": "mistake",
+        "translate": [
+            "salah"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "31",
+        "word": "mistaken",
+        "translate": [
+            "salah",
+            "keliru",
+            "silap"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "32",
+        "word": "onto",
+        "translate": [
+            "ke",
+            "atas",
+            "di atas"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "33",
+        "word": "path",
+        "translate": [
+            "jalur",
+            "jalan kecil",
+            "jalan sempit"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "34",
+        "word": "poisoning",
+        "translate": [
+            "peracunan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "35",
+        "word": "previous",
+        "translate": [
+            "sebelum"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "36",
+        "word": "put",
+        "translate": [
+            "menaruh",
+            "mengajukan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "37",
+        "word": "reckless",
+        "translate": [
+            "sembrono"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "38",
+        "word": "resolve",
+        "translate": [
+            "memecahkan",
+            "menyelesaikan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "39",
+        "word": "result",
+        "translate": [
+            "hasil"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "40",
+        "word": "secure",
+        "translate": [
+            "aman"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "41",
+        "word": "shameless",
+        "translate": [
+            "tidak tau malu",
+            "tak tau malu"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "42",
+        "word": "sufficent",
+        "translate": [
+            "memadai",
+            "cukup"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "43",
+        "word": "swallow",
+        "translate": [
+            "menelan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "44",
+        "word": "unstable",
+        "translate": [
+            "tidak stabil"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "45",
+        "word": "void",
+        "translate": [
+            "kosong",
+            "hampa"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "46",
+        "word": "wish",
+        "translate": [
+            "ingin"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "47",
+        "word": "extraordinary",
+        "translate": [
+            "luar biasa"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "48",
+        "word": "quite",
+        "translate": [
+            "masih"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "49",
+        "word": "knave",
+        "translate": [
+            "bajingan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "50",
+        "word": "excited",
+        "translate": [
+            "gembira",
+            "bersemangat"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "51",
+        "word": "passionate",
+        "translate": [
+            "bergairah"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "52",
+        "word": "excitement",
+        "translate": [
+            "kegembiraan",
+            "rangsangan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "53",
+        "word": "somewhere",
+        "translate": [
+            "suatu tempat"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "54",
+        "word": "fault",
+        "translate": [
+            "kesalahan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "55",
+        "word": "casually",
+        "translate": [
+            "santai"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "56",
+        "word": "consider",
+        "translate": [
+            "mempertimbangkan",
+            "memikirkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "57",
+        "word": "understood",
+        "translate": [
+            "dimengerti"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "58",
+        "word": "however",
+        "translate": [
+            "namun",
+            "tetapi",
+            "akan tetapi"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "59",
+        "word": "rather",
+        "translate": [
+            "agak"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "60",
+        "word": "chance",
+        "translate": [
+            "kesempatan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "61",
+        "word": "honestly",
+        "translate": [
+            "secara jujur"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "62",
+        "word": "manpower",
+        "translate": [
+            "tenaga kerja"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "63",
+        "word": "otherwise",
+        "translate": [
+            "sebaliknya",
+            "lain"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "64",
+        "word": "otherwise",
+        "translate": [
+            "jika tidak",
+            "kalau tidak"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "65",
+        "word": "ordeal",
+        "translate": [
+            "siksaan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "66",
+        "word": "bonfire",
+        "translate": [
+            "api unggun"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "67",
+        "word": "rattle",
+        "translate": [
+            "berdetak"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "68",
+        "word": "seem",
+        "translate": [
+            "terlihat"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "69",
+        "word": "awful",
+        "translate": [
+            "mengerikan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "70",
+        "word": "to gain",
+        "translate": [
+            "untuk mendapatkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "71",
+        "word": "useful",
+        "translate": [
+            "bermanfaat"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "72",
+        "word": "knowladge",
+        "translate": [
+            "pengetahuan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "73",
+        "word": "few",
+        "translate": [
+            "beberapa"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "74",
+        "word": "thought",
+        "translate": [
+            "pikir",
+            "pikiran",
+            "pemikiran"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "75",
+        "word": "such",
+        "translate": [
+            "seperti itu",
+            "begitu",
+            "sedemikian"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "76",
+        "word": "basically",
+        "translate": [
+            "pada dasarnya"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "77",
+        "word": "could",
+        "translate": [
+            "bisa",
+            "dapat"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "78",
+        "word": "threaten",
+        "translate": [
+            "mengancam"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "79",
+        "word": "threatened",
+        "translate": [
+            "terancam"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "80",
+        "word": "currently",
+        "translate": [
+            "saat ini"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "81",
+        "word": "possibly",
+        "translate": [
+            "mungkin"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "82",
+        "word": "nonetheless",
+        "translate": [
+            "bagaimanapun",
+            "namun",
+            "meskipun begitu"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "83",
+        "word": "on the other hand",
+        "translate": [
+            "sebaliknya",
+            "di sisi lain"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "84",
+        "word": "nevertheles",
+        "translate": [
+            "namun demikian",
+            "meskipun demikian"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "85",
+        "word": "moreover",
+        "translate": [
+            "selain itu"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "86",
+        "word": "vice versa",
+        "translate": [
+            "sebaliknya"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "87",
+        "word": "decline",
+        "translate": [
+            "menolak"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "88",
+        "word": "decline",
+        "translate": [
+            "kemunduran",
+            "kemerosotan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "89",
+        "word": "decrease",
+        "translate": [
+            "menurun"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "90",
+        "word": "impress",
+        "translate": [
+            "mengesankan",
+            "mempengaruhi",
+            "mengingatkan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "91",
+        "word": "tricky",
+        "translate": [
+            "rumit",
+            "sukar"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "92",
+        "word": "manners",
+        "translate": [
+            "tata krama",
+            "kelakuan baik",
+            "kelakuan sopan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "93",
+        "word": "hysterically",
+        "translate": [
+            "histeris"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "94",
+        "word": "apply",
+        "translate": [
+            "menerapkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "95",
+        "word": "lenguage",
+        "translate": [
+            "kebahasaan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "96",
+        "word": "spoken",
+        "translate": [
+            "lisan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "97",
+        "word": "modest",
+        "translate": [
+            "sederhana"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "98",
+        "word": "special",
+        "translate": [
+            "khusus"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "99",
+        "word": "development",
+        "translate": [
+            "perkembangan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "100",
+        "word": "growth",
+        "translate": [
+            "pertumbuhan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "101",
+        "word": "pristine",
+        "translate": [
+            "murni",
+            "asli"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "102",
+        "word": "contain",
+        "translate": [
+            "mengandung",
+            "memuat"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "103",
+        "word": "suited",
+        "translate": [
+            "cocok"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "104",
+        "word": "tend",
+        "translate": [
+            "cenderung"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "105",
+        "word": "approach",
+        "translate": [
+            "pendekatan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "106",
+        "word": "approach",
+        "translate": [
+            "mendekati"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "107",
+        "word": "contend",
+        "translate": [
+            "bersaing",
+            "berhadapan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "108",
+        "word": "determine",
+        "translate": [
+            "menentukan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "109",
+        "word": "conversely",
+        "translate": [
+            "sebaliknya"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "110",
+        "word": "emergence",
+        "translate": [
+            "munculnya",
+            "kemunculan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "111",
+        "word": "brief",
+        "translate": [
+            "singkat"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "112",
+        "word": "concern",
+        "translate": [
+            "kekhawatiran",
+            "menyangkut",
+            "mengenai"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "113",
+        "word": "bulk",
+        "translate": [
+            "jumlah besar",
+            "bagian terbesar"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "114",
+        "word": "term",
+        "translate": [
+            "ketentuan",
+            "istilah",
+            "masa"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "115",
+        "word": "broad",
+        "translate": [
+            "luas",
+            "lebar",
+            "umum"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "116",
+        "word": "signified",
+        "translate": [
+            "ditandai"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "117",
+        "word": "desirable",
+        "translate": [
+            "diinginkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "118",
+        "word": "provide",
+        "translate": [
+            "menyediakan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "119",
+        "word": "perform",
+        "translate": [
+            "melakukan",
+            "melaksanakan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "120",
+        "word": "sequence",
+        "translate": [
+            "urutan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "121",
+        "word": "particular",
+        "translate": [
+            "tertentu",
+            "khusus",
+            "istimewa",
+            "terutama"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "122",
+        "word": "dependency",
+        "translate": [
+            "ketergantungan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "123",
+        "word": "direct",
+        "translate": [
+            "langsung"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "124",
+        "word": "represent",
+        "translate": [
+            "mewakili"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "125",
+        "word": "constraint",
+        "translate": [
+            "paksaan",
+            "pembatas",
+            "batasan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "126",
+        "word": "define",
+        "translate": [
+            "mendefinisikan",
+            "menetapkan",
+            "menjelaskan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "127",
+        "word": "seasoned",
+        "translate": [
+            "berpengalaman"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "128",
+        "word": "proven",
+        "translate": [
+            "terbukti"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "129",
+        "word": "extensible",
+        "translate": [
+            "dapat diperluas",
+            "dapat diperpanjang"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "130",
+        "word": "recent",
+        "translate": [
+            "terkini",
+            "baru",
+            "belakangan ini"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "131",
+        "word": "vast",
+        "translate": [
+            "luas",
+            "sangat banyak"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "132",
+        "word": "vast",
+        "translate": [
+            "jumlah besar"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "133",
+        "word": "commonplace",
+        "translate": [
+            "biasa",
+            "suatu yang biasa"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "134",
+        "word": "overstate",
+        "translate": [
+            "melebih-lebihkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "135",
+        "word": "rapid",
+        "translate": [
+            "cepat",
+            "pesat",
+            "laju"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "136",
+        "word": "prompt",
+        "translate": [
+            "mendorong"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "137",
+        "word": "prompt",
+        "translate": [
+            "cepat",
+            "segera",
+            "tepat"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "138",
+        "word": "whereas",
+        "translate": [
+            "sedangkan",
+            "padahal",
+            "sebaliknya"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "139",
+        "word": "matter",
+        "translate": [
+            "urusan",
+            "masalah",
+            "hal"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "140",
+        "word": "concern",
+        "translate": [
+            "urusan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "141",
+        "word": "proximate",
+        "translate": [
+            "terdekat",
+            "kurang lebih",
+            "kira-kira"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "142",
+        "word": "occur",
+        "translate": [
+            "terjadi",
+            "terdapat",
+            "berlangsung"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "143",
+        "word": "instead",
+        "translate": [
+            "alih-alih",
+            "malah",
+            "malahan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "144",
+        "word": "quary",
+        "translate": [
+            "pertanyaan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "145",
+        "word": "quary",
+        "translate": [
+            "menanyakan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "146",
+        "word": "depend",
+        "translate": [
+            "bergantung",
+            "mengandalkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "147",
+        "word": "leverage",
+        "translate": [
+            "manfaat",
+            "pengaruh"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "148",
+        "word": "thus",
+        "translate": [
+            "dengan demikian",
+            "demikian",
+            "jadi"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "149",
+        "word": "enigma",
+        "translate": [
+            "teka-teki"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "150",
+        "word": "utilize",
+        "translate": [
+            "memanfaatkan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "151",
+        "word": "abuse",
+        "translate": [
+            "melecehkan",
+            "penyalahgunaan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "152",
+        "word": "despicable",
+        "translate": [
+            "tercela",
+            "keji",
+            "hina"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "153",
+        "word": "autonomous",
+        "translate": [
+            "otonom",
+            "mandiri"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "154",
+        "word": "fluent",
+        "translate": [
+            "fasih"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "155",
+        "word": "empower",
+        "translate": [
+            "memberdayakan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "156",
+        "word": "granular",
+        "translate": [
+            "terperinci"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "157",
+        "word": "distinct",
+        "translate": [
+            "berbeda",
+            "beragam"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "158",
+        "word": "outline",
+        "translate": [
+            "garis besar"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "159",
+        "word": "outline",
+        "translate": [
+            "menguraikan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "160",
+        "word": "branch",
+        "translate": [
+            "cabang",
+            "ranting",
+            "bercabang"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "161",
+        "word": "acquire",
+        "translate": [
+            "mendapatkan",
+            "memperoleh"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "162",
+        "word": "undergo",
+        "translate": [
+            "menjalani",
+            "mengalami",
+            "melalui"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "163",
+        "word": "involve",
+        "translate": [
+            "melibatkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "164",
+        "word": "require",
+        "translate": [
+            "memerlukan",
+            "membutuhkan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "165",
+        "word": "powered by",
+        "translate": [
+            "didukung oleh"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "166",
+        "word": "remain",
+        "translate": [
+            "tetap",
+            "tinggal"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "167",
+        "word": "ensuring",
+        "translate": [
+            "memastikan",
+            "menjamin",
+            "mengasuransikan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "168",
+        "word": "fewer",
+        "translate": [
+            "lebih sedikit"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "169",
+        "word": "in such a way",
+        "translate": [
+            "sedemikian rupa"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "170",
+        "word": "refer",
+        "translate": [
+            "merujuk",
+            "mengacu"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "171",
+        "word": "suggest",
+        "translate": [
+            "menyarankan",
+            "mengusulkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "172",
+        "word": "field",
+        "translate": [
+            "bidang"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "173",
+        "word": "incorporate",
+        "translate": [
+            "menggabungkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "174",
+        "word": "gather",
+        "translate": [
+            "mengumpulkan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "175",
+        "word": "raise",
+        "translate": [
+            "mengangkat"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "176",
+        "word": "measure",
+        "translate": [
+            "ukuran",
+            "mengukur"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "177",
+        "word": "track",
+        "translate": [
+            "melacak"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "178",
+        "word": "inclusion",
+        "translate": [
+            "penyertaan",
+            "pencantuman",
+            "pemasukan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "179",
+        "word": "compile",
+        "translate": [
+            "menyusun",
+            "menghimpun",
+            "mengumpulkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "180",
+        "word": "crucial",
+        "translate": [
+            "penting",
+            "genting",
+            "gawat",
+            "krisis"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "181",
+        "word": "allow",
+        "translate": [
+            "mengizinkan",
+            "memperbolehkan",
+            "membolehkan",
+            "memungkinkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "182",
+        "word": "core",
+        "translate": [
+            "inti",
+            "pokok",
+            "intisari"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "183",
+        "word": "foundation",
+        "translate": [
+            "dasar",
+            "landasan",
+            "pondasi",
+            "lembaga"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "183",
+        "word": "arrage",
+        "translate": [
+            "mengatur",
+            "menyusun",
+            "menata"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "185",
+        "word": "establish",
+        "translate": [
+            "mendirikan",
+            "menentapkan",
+            "membentuk"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "186",
+        "word": "might",
+        "translate": [
+            "mungkin"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "187",
+        "word": "following activities",
+        "translate": [
+            "kegiatan berikut"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "188",
+        "word": "guide",
+        "translate": [
+            "memandu"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "189",
+        "word": "through",
+        "translate": [
+            "melalui"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "190",
+        "word": "though",
+        "translate": [
+            "meskipun",
+            "walaupun"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "191",
+        "word": "gradable",
+        "translate": [
+            "dapat dinilai"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "192",
+        "word": "enrollment",
+        "translate": [
+            "pendaftaran",
+            "registrasi",
+            "penerimaan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "193",
+        "word": "allot",
+        "translate": [
+            "membagikan",
+            "memberikan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "194",
+        "word": "appropriate",
+        "translate": [
+            "sesuai",
+            "tepat",
+            "cocok",
+            "pantas"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "195",
+        "word": "widespread",
+        "translate": [
+            "tersebar luas"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "196",
+        "word": "demand",
+        "translate": [
+            "tuntutan",
+            "permintaan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "197",
+        "word": "demand",
+        "translate": [
+            "menuntut",
+            "meminta",
+            "membutuhkan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "198",
+        "word": "refuge",
+        "translate": [
+            "tempat penyimpanan"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "199",
+        "word": "plenty",
+        "translate": [
+            "banyak"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "200",
+        "word": "wildlife",
+        "translate": [
+            "margasatwa"
+        ],
+        "TabsBar": "Telah Dipelajari"
+    },
+    {
+        "id": "201",
+        "word": "cutting edge",
+        "translate": [
+            "canggih"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "202",
+        "word": "recognition",
+        "translate": [
+            "pengakuan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "203",
+        "word": "recognize",
+        "translate": [
+            "mengenali",
+            "mengakui",
+            "mengenal"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "204",
+        "word": "distinguish",
+        "translate": [
+            "membedakan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "205",
+        "word": "emulate",
+        "translate": [
+            "meniru"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "206",
+        "word": "acoustic",
+        "translate": [
+            "akustik"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "207",
+        "word": "conserve",
+        "translate": [
+            "melestarikan"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    },
+    {
+        "id": "208",
+        "word": "typically",
+        "translate": [
+            "khas",
+            "khususnya"
+        ],
+        "TabsBar": "Sedang Dipelajari"
+    }
+]
