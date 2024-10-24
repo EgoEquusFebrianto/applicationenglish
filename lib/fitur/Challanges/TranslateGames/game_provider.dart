@@ -27,7 +27,8 @@ class GameProvider extends ChangeNotifier {
 
   Future<void> loadWords() async {
     if (dataGame.isEmpty) {
-      final String jsonFileUrl = 'https://raw.githubusercontent.com/EgoEquusFebrianto/public_data/main/dictionary.json';
+      final String jsonFileUrl =
+          'https://raw.githubusercontent.com/EgoEquusFebrianto/public_data/main/dictionary.json';
       try {
         final response = await http.get(Uri.parse(jsonFileUrl));
         if (response.statusCode == 200) {
@@ -109,12 +110,15 @@ class GameProvider extends ChangeNotifier {
       wrongAnswer = true;
       lockInteraction = true;
       notifyListeners();
+
       await Future.delayed(Duration(seconds: 1));
+
       wrongAnswer = false;
       lockInteraction = false;
       onClick1 = '';
       onClick2 = '';
     }
+
     notifyListeners();
   }
 

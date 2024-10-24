@@ -27,55 +27,59 @@ class ButtonTranslate extends StatelessWidget {
           ),
         ),
       ),
-      body: FutureBuilder(
-        future: gameProv.loadWords(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
+      body: Consumer<GameProvider>(
+        builder: (context, gameProv, child) {
+          if (gameProv.dataGame.isEmpty) {
             return Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text("Error loading data"));
-          } else {
-            return Stack(
-              children: [
-                SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-                        child: ProgressBarWithIndicator(),
-                      ),
-                      _buildWordButtons(context, gameProv, theme),
-                      _buildBottomButtons(context, gameProv),
-                      _buildDividers(theme),
-                    ],
-                  ),
-                ),
+          }
 
-                if (gameProv.clear)
-                  Positioned.fill(
-                    child: Container(
-                      color: Colors.black.withOpacity(0.5),
-                      child: Center(
-                        child: Text(
-                          "Round Completed!",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                          ),
+          if (gameProv.clear) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              gameProv.handleCompletion(context);
+            });
+          }
+
+          return Stack(
+            children: [
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15.0, vertical: 10.0),
+                      child: ProgressBarWithIndicator(),
+                    ),
+                    _buildWordButtons(context, gameProv, theme),
+                    _buildBottomButtons(context, gameProv),
+                    _buildDividers(theme),
+                  ],
+                ),
+              ),
+              if (gameProv.clear)
+                Positioned.fill(
+                  child: Container(
+                    color: Colors.black.withOpacity(0.5),
+                    child: Center(
+                      child: Text(
+                        "Round Completed!",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                   ),
-              ],
-            );
-          }
+                ),
+            ],
+          );
         },
       ),
     );
   }
 
-  Widget _buildWordButtons(BuildContext context, GameProvider gameProv, SwitchModeProvider theme) {
+  Widget _buildWordButtons(
+      BuildContext context, GameProvider gameProv, SwitchModeProvider theme) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
       decoration: BoxDecoration(
@@ -130,8 +134,10 @@ class ButtonTranslate extends StatelessWidget {
                             : null,
                         child: isActive ? Text(randomTranslation) : null,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: isActive ? Colors.orange : Colors.white,
-                          foregroundColor: isActive ? Colors.white : Colors.transparent,
+                          backgroundColor:
+                              isActive ? Colors.orange : Colors.white,
+                          foregroundColor:
+                              isActive ? Colors.white : Colors.transparent,
                           minimumSize: Size(double.infinity, 50),
                           side: gameProv.onClick1 == data['id'] ||
                                   (gameProv.wrongAnswer &&
@@ -166,8 +172,10 @@ class ButtonTranslate extends StatelessWidget {
                             : null,
                         child: isActive ? Text(data['word']) : null,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: isActive ? Colors.green : Colors.white,
-                          foregroundColor: isActive ? Colors.white : Colors.transparent,
+                          backgroundColor:
+                              isActive ? Colors.green : Colors.white,
+                          foregroundColor:
+                              isActive ? Colors.white : Colors.transparent,
                           minimumSize: Size(double.infinity, 50),
                           side: gameProv.onClick2 == data['id'] ||
                                   (gameProv.wrongAnswer &&
@@ -249,4 +257,3 @@ class ButtonTranslate extends StatelessWidget {
     );
   }
 }
-
