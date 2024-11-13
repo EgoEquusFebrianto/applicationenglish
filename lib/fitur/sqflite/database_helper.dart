@@ -24,56 +24,45 @@ class DatabaseHelper {
   Future _createDB(Database db, int version) async {
     await db.execute('''
       CREATE TABLE users(
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        uid TEXT PRIMARY KEY,
         username TEXT NOT NULL,
-        email TEXT NOT NULL,
+        email TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL
       )
     ''');
   }
 
   // Fungsi untuk menambahkan user ke database
-  Future<void> insertUser(User user) async {
+  Future<void> saveUserOffline(UserDefine user) async {
     final db = await database;
     await db.insert(
       'users',
       user.toMap(),
-      conflictAlgorithm: ConflictAlgorithm.replace, // Replace jika data duplikat
+      conflictAlgorithm:
+          ConflictAlgorithm.ignore,
     );
   }
 
-  // Fungsi untuk mendapatkan semua data user
-  Future<List<User>> getUsers() async {
-    final db = await database;
-    final List<Map<String, dynamic>> maps = await db.query('users');
-
-    return List.generate(maps.length, (i) {
-      return User.fromMap(maps[i]);
-    });
-  }
-
-  // Fungsi untuk mendapatkan user berdasarkan email
-  Future<User?> getUserByEmail(String email) async {
+  // Fungsi untuk validasi login offline berdasarkan email dan password
+  Future<UserDefine?> validateUserOffline(String email, String password) async {
     final db = await database;
     final List<Map<String, dynamic>> maps = await db.query(
       'users',
-      where: 'email = ?',
-      whereArgs: [email],
+      where: 'email = ? AND password = ?',
+      whereArgs: [email, password],
     );
-
     if (maps.isNotEmpty) {
-      return User.fromMap(maps.first);
+      return UserDefine.fromMap(maps.first);
     }
     return null;
   }
 
-  // Fungsi untuk menghapus user berdasarkan id
-  Future<void> deleteUser(int id) async {
+  Future<List<UserDefine>> getAllUsers() async {
     final db = await database;
-    await db.delete(
-      'users',
-      where: 'id = ?',
-      whereArgs: [id],
-    );
+    final List<Map<String, dynamic>> maps = await db.query('users');
+
+    return List.generate(maps.length, (i) {
+      return UserDefine.fromMap(maps[i]);
+    });
   }
 }

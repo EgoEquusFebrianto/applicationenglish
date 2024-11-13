@@ -1,171 +1,178 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:applicationenglish/Home.dart';
-import 'auth_prov.dart';
-import 'register.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_login/flutter_login.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+import 'auth_firebase.dart';
 
-class Login extends StatelessWidget {
-  final TextEditingController usernameController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
-  Login({super.key});
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final MyauthFirebase _auth = MyauthFirebase();
+  bool _onLoginSession = false;
+  bool _onSignUpSession = false;
+  String? uidUser;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _auth.checkFirebaseConnection().then((isConnected) {
+  //     print('the result is $isConnected');
+  //   });
+  //   _checkLoginSession();
+  // }
+
+  // Fungsi untuk memeriksa waktu login terakhir
+  // Future<void> _checkLoginSession() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   final lastLogin = prefs.getInt('last_login');
+  //   final currentTime = DateTime.now().millisecondsSinceEpoch;
+
+  //   if (lastLogin != null) {
+  //     final differenceInDays =
+  //         (currentTime - lastLogin) / (1000 * 60 * 60 * 24);
+
+  //     if (differenceInDays > 2) {
+  //       // Jika lebih dari 2 hari, arahkan ke halaman login
+  //       Navigator.pushReplacement(
+  //           context, MaterialPageRoute(builder: (context) => LoginScreen()));
+  //     } else {
+  //       // Jika masih dalam masa login otomatis, cek koneksi dan lanjutkan ke halaman CheckDatabaseScreen
+  //       _auth.checkFirebaseConnection().then((isConnected) {
+  //         if (isConnected) {
+  //           _auth.getUserCredencial().then((user) {
+  //             if (user != null) {
+  //               Navigator.pushReplacement(
+  //                   context,
+  //                   MaterialPageRoute(
+  //                       builder: (context) => CheckDatabaseScreen()));
+  //             } else {
+  //               print("Tidak ditemukan kredensial di Firebase");
+  //             }
+  //           });
+  //         } else {
+  //           _auth.signInOffline("email", "password").then((userId) {
+  //             if (userId != null) {
+  //               Navigator.pushReplacement(
+  //                   context,
+  //                   MaterialPageRoute(
+  //                       builder: (context) => CheckDatabaseScreen()));
+  //             } else {
+  //               print("Tidak ditemukan kredensial secara offline");
+  //             }
+  //           });
+  //         }
+  //       });
+  //     }
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
-    final authProvider = Provider.of<AuthProvider>(context);
-
-    // Memuat informasi login yang tersimpan di SharedPreferences
-    authProvider.loadRegisterInfo();
-
-    return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: _buildGradientBackground(),
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _buildCircleAvatar(),
-                const SizedBox(height: 20),
-                _buildTitle(),
-                const SizedBox(height: 30),
-                _buildLoginForm(context, authProvider),
-                const SizedBox(height: 20),
-                _buildRegisterPrompt(context),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  BoxDecoration _buildGradientBackground() {
-    return BoxDecoration(
-      gradient: LinearGradient(
-        colors: [Colors.blue.shade800, Colors.blue.shade200],
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-      ),
-    );
-  }
-
-  Widget _buildCircleAvatar() {
-    return const CircleAvatar(
-      backgroundColor: Colors.white,
-      child: Icon(Icons.person, color: Colors.blue, size: 80),
-      radius: 70,
-    );
-  }
-
-  Widget _buildTitle() {
-    return Column(
-      children: const [
-        Text(
-          "Welcome Back!",
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
-        ),
-        SizedBox(height: 10),
-        Text("Please login to your account",
-            style: TextStyle(color: Colors.white70, fontSize: 18)),
-      ],
-    );
-  }
-
-  Widget _buildLoginForm(BuildContext context, AuthProvider authProvider) {
-    return Column(
-      children: [
-        _buildTextField(usernameController, "Username", Icons.person),
-        const SizedBox(height: 20),
-        _buildTextField(passwordController, "Password", Icons.lock,
-            obscureText: true),
-        const SizedBox(height: 10),
-        _buildLoginButton(context, authProvider),
-      ],
-    );
-  }
-
-  Widget _buildTextField(
-      TextEditingController controller, String label, IconData icon,
-      {bool obscureText = false}) {
-    return TextField(
-      controller: controller,
-      obscureText: obscureText,
-      style: TextStyle(color: Colors.black), // Always black for text content
-      decoration: InputDecoration(
-        labelText: label,
-        labelStyle: TextStyle(color: Colors.black), // Always black for labels
-        hintStyle: TextStyle(color: Colors.black), // Always black for hints
-        filled: true,
-        fillColor: Colors.transparent, // Set background color to white
-        prefixIcon: Icon(icon, color: Colors.black), // Icon color set to black
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide:
-              BorderSide(color: Colors.black), // Outline color set to black
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(color: const Color.fromRGBO(213, 0, 0, 1)), // Border color when focused
-        ),
-      ),
-    );
-  }
-
-  Widget _buildLoginButton(BuildContext context, AuthProvider authProvider) {
-    return ElevatedButton(
-      onPressed: () {
-        if (usernameController.text.isEmpty ||
-            passwordController.text.isEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Please fill in both fields')),
-          );
-        } else if (authProvider.validateCredentials(
-            usernameController.text, passwordController.text)) {
-          authProvider.saveLoginStatus(true);
-          Navigator.of(context)
-              .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
-        } else {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Invalid email or password')),
-          );
+    return FlutterLogin(
+      onLogin: _onLogin,
+      onRecoverPassword: _onRecoverPassword,
+      onSignup: _onSignUp,
+      // ignore: body_might_complete_normally_nullable
+      passwordValidator: (value) {
+        if (value != null && value.length < 6) {
+          return "Password minimal 6 karakter";
         }
       },
-      child: const Text(
-        "Login",
-        style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-            color: Colors.white), // Always white text
-      ),
-      style: ElevatedButton.styleFrom(
-        fixedSize: const Size(400, 50),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        backgroundColor: Colors.blue.shade700, // Button background color
-      ),
+      loginProviders: [
+        LoginProvider(
+            callback: _onGoogleSignIn,
+            icon: FontAwesomeIcons.google,
+            label: "Google"),
+        LoginProvider(
+            callback: _onFacebookleSignIn,
+            icon: FontAwesomeIcons.facebook,
+            label: "Facebook"),
+      ],
+      onSubmitAnimationCompleted: _onSubmitAnimationCompleted,
     );
   }
 
-  Widget _buildRegisterPrompt(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text("Don't have an account? ",
-            style: TextStyle(color: Colors.white, fontSize: 16)),
-        GestureDetector(
-          onTap: () => Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => Register())),
-          child: const Text(
-            "Register!",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),
-          ),
-        ),
-      ],
-    );
+  Future<String?>? _onLogin(LoginData data) async {
+    bool isConnected = await _auth.checkFirebaseConnection();
+
+    if (isConnected) {
+      return _auth.signIn(data.name, data.password).then((value) {
+        if (value != null) {
+          ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text("Sign in Berhasil Firebase")));
+          _onLoginSession = true;
+          uidUser = value;
+        } else {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text("Sign in Gagal Firebase")));
+        }
+      });
+    } else {
+      return _auth.signInOffline(data.name, data.password).then((value) {
+        if (value != null) {
+          ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text("Sign in Berhasil SQFLite")));
+          _onLoginSession = true;
+          uidUser = value;
+        } else {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text("Sign in Gagal SQFLite")));
+        }
+      });
+    }
+  }
+
+  Future<String?>? _onSignUp(SignupData data) async {
+    bool isConnected = await _auth.checkFirebaseConnection();
+
+    if (isConnected) {
+      return _auth.signUp(data.name!, data.password!).then((value) {
+        if (value != null) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text("Sign Up Berhasil")));
+          _onSignUpSession = true;
+          uidUser = value;
+        } else {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text("Sign Up Gagal")));
+        }
+      });
+    } else {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("Tidak ada koneksi internet")));
+      return null;
+    }
+  }
+
+  void _onSubmitAnimationCompleted() async {
+    if (_onLoginSession || _onSignUpSession) {
+      await _auth.getUserInfo(uidUser!).then((res) {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Home(dataUser: res)));
+      });
+    } else {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => LoginScreen()));
+    }
+  }
+
+  Future<String?>? _onRecoverPassword(String email) async {
+    return null;
+  }
+
+  Future<String?>? _onGoogleSignIn() async {
+    return null;
+  }
+
+  Future<String?>? _onFacebookleSignIn() async {
+    return null;
   }
 }

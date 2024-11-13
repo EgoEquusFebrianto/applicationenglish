@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'home_provider.dart';
@@ -15,7 +16,8 @@ import 'fitur/custom_bottom_navigation_bar.dart';
 import 'fitur/Challanges/tmp.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  final dataUser;
+  const Home({Key? key, this.dataUser}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,8 @@ class Home extends StatelessWidget {
             },
             child: const Icon(Icons.backup_table_sharp),
           ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.miniCenterDocked,
           body: bodyPage(context, homeProvider.selectedIndex),
           bottomNavigationBar: CustomBottomNavigationBar(
             selectedIndex: homeProvider.selectedIndex,
@@ -71,7 +74,7 @@ class Home extends StatelessWidget {
           ),
         );
       case 1:
-        return const Profile();
+        return Profile(user: dataUser);
       default:
         return Container();
     }
@@ -124,7 +127,8 @@ class Home extends StatelessWidget {
                         ),
                       );
                     },
-                    backgroundImage: const AssetImage('assets/pict/icons/sentences.jpeg'),
+                    backgroundImage:
+                        const AssetImage('assets/pict/icons/sentences.jpeg'),
                     isNetworkImage: true,
                   ),
                   FeatureCard(
@@ -137,7 +141,8 @@ class Home extends StatelessWidget {
                         ),
                       );
                     },
-                    backgroundImage: const AssetImage('assets/pict/icons/button translate.webp'),
+                    backgroundImage: const AssetImage(
+                        'assets/pict/icons/button translate.webp'),
                     isNetworkImage: false,
                   ),
                 ],
@@ -167,7 +172,9 @@ class Home extends StatelessWidget {
               translationProvider.setTargetLanguage(value);
             }
           },
-          onTranslatePressed: () => Provider.of<HomeProvider>(context, listen: false).translateText(context),
+          onTranslatePressed: () =>
+              Provider.of<HomeProvider>(context, listen: false)
+                  .translateText(context),
         );
       },
     );
@@ -233,11 +240,18 @@ class Home extends StatelessWidget {
             color: Colors.blue,
             height: 20,
           ),
-          DrawerListTile(
-            icon: Icons.logout,
-            title: 'Logout',
-            page: Login(),
-          ),
+          ElevatedButton.icon(
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  (Route<dynamic> route) => false,
+                );
+              },
+              icon: Icon(Icons.logout), 
+              label: Text("Log Out"),
+              ),
           const Divider(
             endIndent: 25,
             thickness: 2,

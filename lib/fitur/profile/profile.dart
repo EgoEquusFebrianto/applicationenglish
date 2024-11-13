@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:applicationenglish/fitur/login_and_regist/auth_prov.dart';
+// import 'package:applicationenglish/fitur/login.dart';
 import 'provider/profil_prov.dart';
 import 'about_yeah.dart';
 import 'edit.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({super.key});
+  const Profile({Key? key, this.user}) : super(key: key);
+  final user;
 
   void _showDialog(BuildContext context, String title, String content) {
     showDialog(
@@ -31,7 +32,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final authProvider = Provider.of<AuthProvider>(context);
+    // final authProvider = Provider.of<AuthProvider>(context);
 
     return Scaffold(
       body: Consumer<ProfilProv>(builder: (context, value, _) {
@@ -55,7 +56,7 @@ class Profile extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
                       Text(
-                        authProvider.getNameFromEmail(authProvider.email),
+                        user['username'],
                         style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 20,
@@ -63,7 +64,7 @@ class Profile extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        authProvider.email,
+                        user['email'],
                         style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 20,
