@@ -6,7 +6,7 @@ import '_services.dart';
 class ButtonTransfer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = Provider.of<SwitchModeProvider>(context).themeData;
+    var theme = Provider.of<SwitchModeProvider>(context).themeData;
 
     return Scaffold(
       body: PopScope(
@@ -98,6 +98,7 @@ class ButtonTransfer extends StatelessWidget {
 
   Widget _buildTranslationContainer(BuildContext context) {
     final dark = Provider.of<SwitchModeProvider>(context);
+    var theme = Provider.of<SwitchModeProvider>(context).themeData;
 
     return Consumer<ClickedButtonListProvider>(
       builder: (context, clickedProvider, _) {
@@ -116,7 +117,7 @@ class ButtonTransfer extends StatelessWidget {
               children: [
                 Text(
                   "what is the translation in Indonesian of that?",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: TextStyle(color: theme.primaryColor, fontSize: 18, fontWeight: FontWeight.w600),
                 ),
                 SizedBox(height: 20),
                 Container(

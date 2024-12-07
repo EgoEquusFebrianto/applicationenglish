@@ -1,3 +1,4 @@
+import 'package:applicationenglish/fitur/profile/provider/profileProv.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,20 +18,33 @@ import 'fitur/Challanges/tmp.dart';
 
 class Home extends StatelessWidget {
   final dataUser;
-  const Home({Key? key, this.dataUser}) : super(key: key);
+  final uid;
+  const Home({Key? key, this.dataUser, this.uid}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var theme = Provider.of<SwitchModeProvider>(context).themeData;
+    var firestore = Provider.of<FirestoreInterface>(context);
+    
+    Future.microtask(() {
+      if(firestore.uid == "") firestore.setUid(uid);
+      if(firestore.data == null) firestore.catchUser();
+      });
+    
     return Consumer<HomeProvider>(
       builder: (context, homeProvider, child) {
         return Scaffold(
           appBar: AppBar(
             title: Text(
               homeProvider.selectedIndex == 0 ? "Home" : "Profile",
-              style: const TextStyle(color: Colors.white),
+              style: theme.appBarTheme.titleTextStyle,
+              // style: const TextStyle(color: Colors.white),
             ),
-            backgroundColor: Colors.blue,
+            backgroundColor: theme.appBarTheme.backgroundColor,
+            iconTheme: theme.iconTheme,
+            // backgroundColor: Colors.blue,
           ),
+          backgroundColor: theme.scaffoldBackgroundColor,
           drawer: buildDrawer(context),
           floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.blue,
@@ -38,7 +52,7 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context,
                 // MaterialPageRoute(builder: (context) => const HandlerButton()),
-                MaterialPageRoute(builder: (context) => const Challange()),
+                MaterialPageRoute(builder: (context) => Challange()),
               );
             },
             child: const Icon(Icons.backup_table_sharp),
@@ -181,11 +195,13 @@ class Home extends StatelessWidget {
   }
 
   Drawer buildDrawer(BuildContext context) {
+    var theme = Provider.of<SwitchModeProvider>(context).themeData;
     return Drawer(
+      backgroundColor: theme.colorScheme.onPrimary,
       child: ListView(
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
+          DrawerHeader(
+            decoration: const BoxDecoration(
               color: Colors.blue,
             ),
             child: Column(
@@ -194,7 +210,7 @@ class Home extends StatelessWidget {
                 CircleAvatar(
                   radius: 50,
                   backgroundColor: Colors.white,
-                  child: Icon(
+                  child: const Icon(
                     Icons.person,
                     size: 50,
                     color: Colors.blue,
@@ -204,29 +220,31 @@ class Home extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          const Column(
+          Column(
             children: [
               Text(
                 'Welcome to Learning App',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
+                  color: theme.primaryColor,
                 ),
               ),
               Text(
                 'Your gateway to knowledge',
                 style: TextStyle(
                   fontSize: 14,
+                  color: theme.primaryColor,
                 ),
               ),
             ],
           ),
           const SizedBox(height: 20),
           buildSwitchListTile(context),
-          const Divider(
+          Divider(
             endIndent: 25,
             thickness: 2,
-            color: Colors.blue,
+            color: theme.colorScheme.primary,
             height: 20,
           ),
           DrawerListTile(
@@ -234,28 +252,17 @@ class Home extends StatelessWidget {
             title: 'About',
             page: AboutYeah(),
           ),
-          const Divider(
+          Divider(
             endIndent: 25,
             thickness: 2,
-            color: Colors.blue,
+            color: theme.colorScheme.primary,
             height: 20,
           ),
-          ElevatedButton.icon(
-              onPressed: () async {
-                await FirebaseAuth.instance.signOut();
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
-                  (Route<dynamic> route) => false,
-                );
-              },
-              icon: Icon(Icons.logout), 
-              label: Text("Log Out"),
-              ),
-          const Divider(
+          buildLogOutAction(context),
+          Divider(
             endIndent: 25,
             thickness: 2,
-            color: Colors.blue,
+            color: theme.colorScheme.primary,
             height: 20,
           ),
         ],
@@ -263,13 +270,44 @@ class Home extends StatelessWidget {
     );
   }
 
-  SwitchListTile buildSwitchListTile(BuildContext context) {
+  SwitchListTile buildSwitchListTile(
+    BuildContext context,
+  ) {
+    var theme = Provider.of<SwitchModeProvider>(context);
     return SwitchListTile(
-      title: const Text('Dark Mode'),
-      value: Provider.of<SwitchModeProvider>(context).darkMode,
+      title: Text('Dark Mode',
+          style: TextStyle(
+            color: theme.themeData.primaryColor,
+          )),
+      value: theme.darkMode,
       onChanged: (bool val) {
         Provider.of<SwitchModeProvider>(context, listen: false).toggleTheme();
       },
+    );
+  }
+
+  Widget buildLogOutAction(BuildContext context) {
+    var theme = Provider.of<SwitchModeProvider>(context).themeData;
+    return ElevatedButton.icon(
+      style: ElevatedButton.styleFrom(
+          backgroundColor: theme.colorScheme.onPrimary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            side: BorderSide.none,
+          ),
+          elevation: 0,
+          textStyle: TextStyle(
+              color: theme.primaryColor, fontWeight: FontWeight.bold)),
+      onPressed: () async {
+        await FirebaseAuth.instance.signOut();
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => LoginScreen()),
+          (Route<dynamic> route) => false,
+        );
+      },
+      icon: Icon(Icons.logout),
+      label: Text("Log Out"),
     );
   }
 }

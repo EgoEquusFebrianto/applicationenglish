@@ -1,4 +1,6 @@
+import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'myDictionary/dictionary.dart';
 import 'Sentences/HandlerButton.dart';
 import 'TranslateGames/button_translate.dart';
@@ -9,15 +11,18 @@ class Challange extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ValueNotifier<bool> loadingNotifier = ValueNotifier<bool>(false);
+    var theme = Provider.of<SwitchModeProvider>(context).themeData;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           "Challange",
-          style: TextStyle(color: Colors.white),
+          style: theme.appBarTheme.titleTextStyle,
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: theme.appBarTheme.backgroundColor,
+        iconTheme: theme.iconTheme,
       ),
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: Stack(
         children: [
           // Konten yang terlihat

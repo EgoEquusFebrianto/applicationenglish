@@ -1,4 +1,5 @@
 // dictionary.dart
+import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '_Provider.dart';
@@ -6,11 +7,13 @@ import '_Provider.dart';
 class WordListScreen extends StatelessWidget {
   @override
    Widget build(BuildContext context) {
+    var theme = Provider.of<SwitchModeProvider>(context).themeData;
     return DefaultTabController(
       length: 2, // Number of tabs
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Word List'),
+          title: Text('Word List', style: theme.appBarTheme.titleTextStyle,),
+          iconTheme: theme.iconTheme,
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(
                 144.0), // Height for AppBar + TabBar + Button + Dropdown
@@ -47,6 +50,7 @@ class WordListScreen extends StatelessWidget {
           ),
         ),
         // Use FutureBuilder to load words asynchronously
+        backgroundColor: theme.scaffoldBackgroundColor,
         body: FutureBuilder(
           future: Provider.of<WordProvider>(context, listen: false).loadingData(),
           builder: (context, snapshot) {

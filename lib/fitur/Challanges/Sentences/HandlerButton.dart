@@ -1,3 +1,4 @@
+import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'englishStructuredSentences.dart';
@@ -11,10 +12,13 @@ class HandlerButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final handlerButtonProvider = Provider.of<HandlerButtonProvider>(context);
     final useState = Provider.of<ClickedButtonListProvider>(context);
+    var theme = Provider.of<SwitchModeProvider>(context).themeData;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Handler Button'),
-        backgroundColor: Colors.blue,
+        title: Text('Handler Button', style: theme.appBarTheme.titleTextStyle,),
+        // backgroundColor: theme.appBarTheme.backgroundColor,
+        backgroundColor: theme.appBarTheme.backgroundColor,
+        iconTheme: theme.iconTheme,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -22,6 +26,7 @@ class HandlerButton extends StatelessWidget {
           },
         ),
       ),
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -36,9 +41,10 @@ class HandlerButton extends StatelessWidget {
                       "Beginner",
                       "assets/pict/icons/Beginner.jpg",
                       Icons.star,
-                      () { 
+                      () {
                         useState.setLevel(1);
-                        handlerButtonProvider.navigateToPage(context, ButtonTransfer());
+                        handlerButtonProvider.navigateToPage(
+                            context, ButtonTransfer());
                       },
                       isNetworkImage: false,
                     ),
@@ -47,9 +53,10 @@ class HandlerButton extends StatelessWidget {
                       "Intermediate",
                       "assets/pict/icons/Intermediate.jpg",
                       Icons.star,
-                      () { 
+                      () {
                         useState.setLevel(2);
-                        handlerButtonProvider.navigateToPage(context, ButtonTransfer());
+                        handlerButtonProvider.navigateToPage(
+                            context, ButtonTransfer());
                       },
                       isNetworkImage: false,
                     ),
@@ -60,7 +67,8 @@ class HandlerButton extends StatelessWidget {
                       Icons.star,
                       () {
                         useState.setLevel(3);
-                        handlerButtonProvider.navigateToPage(context, ButtonTransfer());
+                        handlerButtonProvider.navigateToPage(
+                            context, ButtonTransfer());
                       },
                       isNetworkImage: false,
                     ),

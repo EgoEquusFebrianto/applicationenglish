@@ -9,6 +9,7 @@ class ButtonTranslate extends StatelessWidget {
   Widget build(BuildContext context) {
     var gameProv = Provider.of<GameProvider>(context);
     var theme = Provider.of<SwitchModeProvider>(context);
+    var themes = Provider.of<SwitchModeProvider>(context).themeData;
 
     if (gameProv.clear) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -20,13 +21,12 @@ class ButtonTranslate extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Cocokkan Kata!",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-            color: theme.darkMode ? Colors.white : Colors.black87,
-          ),
+          style: themes.appBarTheme.titleTextStyle,
         ),
+        backgroundColor: themes.appBarTheme.backgroundColor,
+        iconTheme: themes.iconTheme,
       ),
+      backgroundColor: themes.scaffoldBackgroundColor,
       body: Consumer<GameProvider>(
         builder: (context, gameProv, child) {
           if (gameProv.dataGame.isEmpty) {
@@ -200,6 +200,7 @@ class ButtonTranslate extends StatelessWidget {
   }
 
   Widget _buildBottomButtons(BuildContext context, GameProvider gameProv) {
+    var theme = Provider.of<SwitchModeProvider>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
       child: Row(
@@ -224,10 +225,10 @@ class ButtonTranslate extends StatelessWidget {
                 : null,
             style: ElevatedButton.styleFrom(
               padding: EdgeInsets.symmetric(horizontal: 40, vertical: 25),
-              backgroundColor: Colors.blue,
-              foregroundColor: Colors.white,
+              backgroundColor: theme.darkMode? Colors.white : Colors.blue,
+              foregroundColor: theme.darkMode? Colors.red : Colors.white,
             ),
-            child: Text("Selanjutnya", style: TextStyle(fontSize: 18)),
+            child: Text("Selanjutnya", style: TextStyle(fontSize: 18, color: theme.themeData.primaryColor)),
           ),
         ],
       ),

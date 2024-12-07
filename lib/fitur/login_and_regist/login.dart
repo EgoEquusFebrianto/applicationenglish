@@ -18,60 +18,6 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _onSignUpSession = false;
   String? uidUser;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _auth.checkFirebaseConnection().then((isConnected) {
-  //     print('the result is $isConnected');
-  //   });
-  //   _checkLoginSession();
-  // }
-
-  // Fungsi untuk memeriksa waktu login terakhir
-  // Future<void> _checkLoginSession() async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   final lastLogin = prefs.getInt('last_login');
-  //   final currentTime = DateTime.now().millisecondsSinceEpoch;
-
-  //   if (lastLogin != null) {
-  //     final differenceInDays =
-  //         (currentTime - lastLogin) / (1000 * 60 * 60 * 24);
-
-  //     if (differenceInDays > 2) {
-  //       // Jika lebih dari 2 hari, arahkan ke halaman login
-  //       Navigator.pushReplacement(
-  //           context, MaterialPageRoute(builder: (context) => LoginScreen()));
-  //     } else {
-  //       // Jika masih dalam masa login otomatis, cek koneksi dan lanjutkan ke halaman CheckDatabaseScreen
-  //       _auth.checkFirebaseConnection().then((isConnected) {
-  //         if (isConnected) {
-  //           _auth.getUserCredencial().then((user) {
-  //             if (user != null) {
-  //               Navigator.pushReplacement(
-  //                   context,
-  //                   MaterialPageRoute(
-  //                       builder: (context) => CheckDatabaseScreen()));
-  //             } else {
-  //               print("Tidak ditemukan kredensial di Firebase");
-  //             }
-  //           });
-  //         } else {
-  //           _auth.signInOffline("email", "password").then((userId) {
-  //             if (userId != null) {
-  //               Navigator.pushReplacement(
-  //                   context,
-  //                   MaterialPageRoute(
-  //                       builder: (context) => CheckDatabaseScreen()));
-  //             } else {
-  //               print("Tidak ditemukan kredensial secara offline");
-  //             }
-  //           });
-  //         }
-  //       });
-  //     }
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
@@ -100,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<String?>? _onLogin(LoginData data) async {
     bool isConnected = await _auth.checkFirebaseConnection();
-
+    
     if (isConnected) {
       return _auth.signIn(data.name, data.password).then((value) {
         if (value != null) {
@@ -108,9 +54,11 @@ class _LoginScreenState extends State<LoginScreen> {
               SnackBar(content: Text("Sign in Berhasil Firebase")));
           _onLoginSession = true;
           uidUser = value;
+          
         } else {
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(content: Text("Sign in Gagal Firebase")));
+          return null;
         }
       });
     } else {
@@ -123,6 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
         } else {
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(content: Text("Sign in Gagal SQFLite")));
+          return null;
         }
       });
     }
@@ -156,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-                builder: (context) => Home(dataUser: res)));
+                builder: (context) => Home(dataUser: res, uid: uidUser)));
       });
     } else {
       Navigator.pushReplacement(
