@@ -1,6 +1,7 @@
 import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'package:applicationenglish/MainProviderSystem.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:provider/provider.dart';
 
 class LenguageSet extends StatelessWidget {
@@ -16,7 +17,7 @@ class LenguageSet extends StatelessWidget {
         backgroundColor: theme.appBarTheme.backgroundColor,
         iconTheme: theme.iconTheme,
         title: Text(
-          'Localization Example',
+          'setLanguage'.i18n(),
           style: theme.appBarTheme.titleTextStyle,
         ),
       ),
@@ -27,7 +28,7 @@ class LenguageSet extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Pilih Bahasa:',
+              'setLanguage_info'.i18n(),
               style: TextStyle(color: theme.primaryColor),
             ),
             const SizedBox(height: 20),
