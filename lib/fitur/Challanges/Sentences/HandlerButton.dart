@@ -1,5 +1,6 @@
 import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:provider/provider.dart';
 import 'englishStructuredSentences.dart';
 import 'HandlerButton_prov.dart';
@@ -15,7 +16,7 @@ class HandlerButton extends StatelessWidget {
     var theme = Provider.of<SwitchModeProvider>(context).themeData;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Handler Button', style: theme.appBarTheme.titleTextStyle,),
+        title: Text('sentences_appbarlabel'.i18n(), style: theme.appBarTheme.titleTextStyle,),
         // backgroundColor: theme.appBarTheme.backgroundColor,
         backgroundColor: theme.appBarTheme.backgroundColor,
         iconTheme: theme.iconTheme,
@@ -38,7 +39,7 @@ class HandlerButton extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     _buildCard(
-                      "Beginner",
+                      "sentences_level1".i18n(),
                       "assets/pict/icons/Beginner.jpg",
                       Icons.star,
                       () {
@@ -50,7 +51,7 @@ class HandlerButton extends StatelessWidget {
                     ),
                     const SizedBox(height: 25),
                     _buildCard(
-                      "Intermediate",
+                      "sentences_level2".i18n(),
                       "assets/pict/icons/Intermediate.jpg",
                       Icons.star,
                       () {
@@ -62,7 +63,7 @@ class HandlerButton extends StatelessWidget {
                     ),
                     const SizedBox(height: 25),
                     _buildCard(
-                      "Advanced",
+                      "sentences_level3".i18n(),
                       "assets/pict/icons/Upper-Intermediate.jpg",
                       Icons.star,
                       () {

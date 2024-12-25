@@ -51,6 +51,10 @@ dependencies:
   cloud_firestore: ^5.5.1
   image_picker: ^1.1.2
   permission_handler: ^11.3.1
+  flutter_localizations:
+    sdk: flutter
+    version: ^0.0.0
+  localization: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +88,7 @@ flutter:
     - assets/pict/icons/sentences.jpeg
     - assets/pict/icons/button translate.webp
     - assets/pict/icons/vocabullary.jpg
+    - lib/i18n/
     
   # To add assets to your application, add an assets section, like this:
   # assets:

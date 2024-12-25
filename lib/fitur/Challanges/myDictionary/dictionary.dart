@@ -12,11 +12,13 @@ class WordListScreen extends StatelessWidget {
       length: 2, // Number of tabs
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Word List', style: theme.appBarTheme.titleTextStyle,),
-          iconTheme: theme.iconTheme,
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(
-                144.0), // Height for AppBar + TabBar + Button + Dropdown
+          title: Text(
+            'Word List', 
+            style: theme.appBarTheme.titleTextStyle,
+          ),
+          backgroundColor: theme.scaffoldBackgroundColor,
+          iconTheme: theme.appBarTheme.iconTheme,
+          bottom: PreferredSize(preferredSize: Size.fromHeight(144.0), // Height for AppBar + TabBar + Button + Dropdown
             child: Column(
               children: [
                 TabBar(

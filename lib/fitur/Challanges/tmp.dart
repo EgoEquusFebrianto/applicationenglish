@@ -1,5 +1,6 @@
 import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:provider/provider.dart';
 import 'myDictionary/dictionary.dart';
 import 'Sentences/HandlerButton.dart';
@@ -16,7 +17,7 @@ class Challange extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Challange",
+          "tmp_appbarlabel".i18n(),
           style: theme.appBarTheme.titleTextStyle,
         ),
         backgroundColor: theme.appBarTheme.backgroundColor,

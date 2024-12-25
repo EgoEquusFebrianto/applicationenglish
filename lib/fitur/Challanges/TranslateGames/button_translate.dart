@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:provider/provider.dart';
 import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'game_provider.dart';
@@ -20,7 +21,7 @@ class ButtonTranslate extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Cocokkan Kata!",
+          "translate_appbarlabel".i18n(),
           style: themes.appBarTheme.titleTextStyle,
         ),
         backgroundColor: themes.appBarTheme.backgroundColor,
@@ -228,7 +229,7 @@ class ButtonTranslate extends StatelessWidget {
               backgroundColor: theme.darkMode? Colors.white : Colors.blue,
               foregroundColor: theme.darkMode? Colors.red : Colors.white,
             ),
-            child: Text("Selanjutnya", style: TextStyle(fontSize: 18, color: theme.themeData.primaryColor)),
+            child: Text("translate_next".i18n(), style: TextStyle(fontSize: 18, color: theme.themeData.primaryColor)),
           ),
         ],
       ),

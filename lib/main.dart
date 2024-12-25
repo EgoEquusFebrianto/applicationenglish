@@ -1,6 +1,9 @@
+import 'package:applicationenglish/MainProviderSystem.dart';
 import 'package:applicationenglish/fitur/profile/provider/profileProv.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:localization/localization.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -13,8 +16,6 @@ import 'fitur/Challanges/Sentences/HandlerButton_prov.dart';
 import 'fitur/Challanges/Sentences/_services.dart';
 import 'fitur/providers/translation_provider.dart';
 
-
-// import 'fitur/Challanges/Sentences/HandlerButton.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LocalJsonLocalization.delegate.directories = ["lib/i18n"];
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => FirestoreInterface()),
@@ -51,9 +53,27 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => HomeProvider()),
         ChangeNotifierProvider(create: (context) => HandlerButtonProvider()),
         ChangeNotifierProvider(create: (context) => ClickedButtonListProvider()),
+        ChangeNotifierProvider(create: (context) => LocaleProvider()), 
       ],
       child: Consumer<SwitchModeProvider>(builder: (context, value, _) {
+        var localeProvider = Provider.of<LocaleProvider>(context);
         return MaterialApp(
+          supportedLocales: [
+            Locale("id", "ID"),
+            Locale("en", "US")
+          ],
+          localizationsDelegates: [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            LocalJsonLocalization.delegate
+          ],
+          locale: localeProvider.locale,
+          localeResolutionCallback: (locale, supportedLocales) {
+            if(supportedLocales.contains(locale)) {
+              return locale;
+            }
+            return Locale("en", "US");
+          },
           debugShowCheckedModeBanner: false,
           title: 'Learning_App',
           home: LoginScreen(),

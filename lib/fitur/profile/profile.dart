@@ -1,7 +1,9 @@
+import 'package:applicationenglish/fitur/profile/LenguageSetting.dart';
 import 'package:applicationenglish/fitur/profile/provider/profileProv.dart';
 import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'about_yeah.dart';
@@ -18,77 +20,33 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  File? _image; // File untuk menyimpan gambar yang dipilih
+  File? _image;
+  final picker = ImagePicker();
 
-  // /// Fungsi untuk memeriksa dan meminta izin
-  // Future<bool> _checkAndRequestPermissions(Permission permission) async {
-  //   PermissionStatus status = await permission.request();
-  //   return status.isGranted;
-  // }
+  Future<void> _pickerImage(ImageSource source) async {
+    Permission permission = (source == ImageSource.camera) ? Permission.camera : Permission.photos;
+    PermissionStatus status = await permission.request();
 
-  // Future<bool> _checkAndRequestPermissions(Permission permission) async {
-  //   PermissionStatus status = await permission.status;
-
-  //   if (status.isGranted) {
-  //     return true;
-  //   } else if (status.isDenied || status.isLimited) {
-  //     status = await permission.request();
-  //     return status.isGranted;
-  //   } else if (status.isPermanentlyDenied) {
-  //     await openAppSettings();
-  //     return false;
-  //   }
-  //   return false;
-  // }
-
-  Future<void> _pickImage1(ImageSource source) async {
-    try {
-      final picker = ImagePicker();
-      var pickedFile = await picker.pickImage(source: ImageSource.gallery);
-
-      if (pickedFile != null) {
-        setState(() {
-          _image = File(pickedFile.path);
-        });
-      } else {
-        _showDialog(context, "Tidak ada gambar", "Anda belum memilih gambar.");
+    if (status.isGranted) {
+      try {
+        final pickedFile = await picker.pickImage(source: source);
+        if (pickedFile != null) {
+          setState(() {
+            _image = File(pickedFile.path);
+          });
+        } else {
+          _showDialog(context, "Tidak ada gambar", "Anda belum memilih gambar.");
+        }
+      } catch (e) {
+        _showDialog(context, "Terjadi Kesalahan", "Gagal mengambil gambar: $e");
       }
-    } catch (e) {
-      _showDialog(context, "Izin Diperlukan", "Akses ke galeri diperlukan untuk melanjutkan.");
+    } else if (status.isDenied) {
+      _showDialog(context, "Izin Diperlukan", "Akses ke galeri atau kamera diperlukan untuk melanjutkan.");
+    } else if (status.isPermanentlyDenied) {
+      _showDialog(context, "Izin Diperlukan", "Akses ke galeri atau kamera telah ditolak secara permanen. Silakan atur izin di pengaturan aplikasi.");
     }
   }
 
-  /// Fungsi untuk mengambil gambar dari sumber yang dipilih
-Future<void> _pickImage2(ImageSource source) async {
-  final ImagePicker _picker = ImagePicker();
-  Permission permission =
-      (source == ImageSource.camera) ? Permission.camera : Permission.storage;
-
-  // Meminta izin sesuai dengan sumber gambar
-  PermissionStatus status = await permission.request();
-
-  if (status.isGranted) {
-    try {
-      final pickedFile = await _picker.pickImage(source: source);
-      if (pickedFile != null) {
-        setState(() {
-          _image = File(pickedFile.path);
-        });
-      } else {
-        _showDialog(context, "Tidak ada gambar", "Anda belum memilih gambar.");
-      }
-    } catch (e) {
-      _showDialog(context, "Terjadi Kesalahan", "Gagal mengambil gambar: $e");
-    }
-  } else if (status.isDenied) {
-    _showDialog(context, "Izin Diperlukan", "Akses ke galeri atau kamera diperlukan untuk melanjutkan.");
-  } else if (status.isPermanentlyDenied) {
-    _showDialog(context, "Izin Diperlukan", "Akses ke galeri atau kamera telah ditolak secara permanen. Silakan atur izin di pengaturan aplikasi.");
-  }
-}
-
-
-  /// Fungsi untuk menampilkan dialog informasi
   void _showDialog(BuildContext context, String title, String content) {
     showDialog(
       context: context,
@@ -137,7 +95,7 @@ Future<void> _pickImage2(ImageSource source) async {
                                     leading: const Icon(Icons.photo_library),
                                     title: const Text('Pilih dari Galeri'),
                                     onTap: () {
-                                      _pickImage1(ImageSource.gallery);
+                                      _pickerImage(ImageSource.gallery);
                                       Navigator.of(context).pop();
                                     },
                                   ),
@@ -145,7 +103,7 @@ Future<void> _pickImage2(ImageSource source) async {
                                     leading: const Icon(Icons.photo_camera),
                                     title: const Text('Ambil Foto'),
                                     onTap: () {
-                                      _pickImage2(ImageSource.camera);
+                                      _pickerImage(ImageSource.camera);
                                       Navigator.of(context).pop();
                                     },
                                   ),
@@ -197,11 +155,25 @@ Future<void> _pickImage2(ImageSource source) async {
               ),
               const SizedBox(height: 20),
               Text(
-                "Pengaturan",
+                "profile_set".i18n(),
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: theme.primaryColor,
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => LenguageSet()));
+                },
+                child: Text(
+                  "profile_language".i18n(),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                    color: theme.primaryColor,
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
@@ -214,7 +186,7 @@ Future<void> _pickImage2(ImageSource source) async {
                           })));
                 },
                 child: Text(
-                  "Edit Profile",
+                  "profile_edit".i18n(),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
@@ -225,7 +197,7 @@ Future<void> _pickImage2(ImageSource source) async {
               const Divider(thickness: 3),
               const SizedBox(height: 20),
               Text(
-                "Bantuan & Informasi",
+                "profile_help".i18n(),
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -235,11 +207,10 @@ Future<void> _pickImage2(ImageSource source) async {
               const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-                  _showDialog(context, "Syarat dan Ketentuan",
-                      "Terima kasih telah menggunakan aplikasi kami. Harap dibaca dan pahami syarat dan ketentuan berikut sebelum menggunakan layanan kami:\n\n1. Penggunaan aplikasi ini tunduk pada syarat dan ketentuan yang berlaku.\n\n2. Kami menghargai privasi Anda dan akan melindungi data pribadi sesuai dengan kebijakan privasi kami.\n\n3. Setiap penggunaan yang melanggar ketentuan dapat mengakibatkan pembatasan akses atau penghentian layanan.\n\nTerima kasih atas perhatian Anda.");
+                  _showDialog(context, "profile_requirement".i18n(), "profile_requirement_info".i18n());
                 },
                 child: Text(
-                  "Syarat Dan Ketentuan",
+                  "profile_requirement".i18n(),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
@@ -250,11 +221,10 @@ Future<void> _pickImage2(ImageSource source) async {
               const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-                  _showDialog(context, "Pusat Bantuan",
-                      "Selamat datang di Pusat Bantuan kami.\n\nKami siap membantu Anda dengan segala pertanyaan atau masalah yang Anda miliki terkait penggunaan aplikasi kami.\n\nSilakan cari jawaban untuk pertanyaan umum di bagian FAQ kami.\n\nJika Anda tidak menemukan jawaban yang Anda cari, jangan ragu untuk menghubungi tim dukungan kami melalui email atau telepon yang tertera di halaman kontak aplikasi.\n\nTerima kasih.");
+                  _showDialog(context, "profile_center".i18n(), "profile_center_info".i18n());
                 },
                 child: Text(
-                  "Pusat Bantuan",
+                  "profile_center".i18n(),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
@@ -269,7 +239,7 @@ Future<void> _pickImage2(ImageSource source) async {
                       MaterialPageRoute(builder: (context) => AboutYeah()));
                 },
                 child: Text(
-                  "Tentang Kami",
+                  "profile_about_us".i18n(),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
@@ -280,11 +250,10 @@ Future<void> _pickImage2(ImageSource source) async {
               const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-                  _showDialog(context, "Contact Person",
-                      "Berikut adalah informasi kontak kami untuk pertanyaan lebih lanjut:\n\nNama: TIM L\nEmail: MahasiswaSmster4@mikroskil.ac.id\nTelepon: 082234548960\n\nJangan ragu untuk menghubungi kami jika Anda memiliki pertanyaan atau membutuhkan bantuan lebih lanjut.\n\nTerima kasih.");
+                  _showDialog(context, "profile_contact".i18n(), "profile_contact_info".i18n());
                 },
                 child: Text(
-                  "Contact Person",
+                  "profile_contact".i18n(),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15,

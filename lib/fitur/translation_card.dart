@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 
 class TranslationCard extends StatelessWidget {
   final TextEditingController controller;
@@ -44,7 +45,7 @@ class TranslationCard extends StatelessWidget {
               TextField(
                 controller: controller,
                 decoration: InputDecoration(
-                  labelText: 'Enter text to translate',
+                  labelText: 'TC_textfield'.i18n(),
                   labelStyle: const TextStyle(color: Colors.white),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
@@ -79,7 +80,7 @@ class TranslationCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                child: const Text('Translate'),
+                child: Text('TC_elevatedbuttonlabel'.i18n()),
               ),
               const SizedBox(height: 50),
               Text(

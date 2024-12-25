@@ -15,6 +15,7 @@ import 'fitur/drawer_list_tile.dart';
 import 'fitur/translation_card.dart';
 import 'fitur/custom_bottom_navigation_bar.dart';
 import 'fitur/Challanges/tmp.dart';
+import 'package:localization/localization.dart';
 
 class Home extends StatelessWidget {
   final dataUser;
@@ -36,7 +37,7 @@ class Home extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: Text(
-              homeProvider.selectedIndex == 0 ? "Home" : "Profile",
+              homeProvider.selectedIndex == 0 ? "home_header1".i18n() : "home_header2".i18n(),
               style: theme.appBarTheme.titleTextStyle,
               // style: const TextStyle(color: Colors.white),
             ),
@@ -115,8 +116,8 @@ class Home extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Main Features',
+              Text(
+                "home_MainFiture".i18n(),
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -223,7 +224,7 @@ class Home extends StatelessWidget {
           Column(
             children: [
               Text(
-                'Welcome to Learning App',
+                "home_welcome".i18n(),
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -231,7 +232,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               Text(
-                'Your gateway to knowledge',
+                'home_greeting'.i18n(),
                 style: TextStyle(
                   fontSize: 14,
                   color: theme.primaryColor,
@@ -249,7 +250,7 @@ class Home extends StatelessWidget {
           ),
           DrawerListTile(
             icon: Icons.info,
-            title: 'About',
+            title: 'home_info'.i18n(),
             page: AboutYeah(),
           ),
           Divider(
@@ -275,7 +276,7 @@ class Home extends StatelessWidget {
   ) {
     var theme = Provider.of<SwitchModeProvider>(context);
     return SwitchListTile(
-      title: Text('Dark Mode',
+      title: Text('home_mode'.i18n(),
           style: TextStyle(
             color: theme.themeData.primaryColor,
           )),
@@ -307,7 +308,7 @@ class Home extends StatelessWidget {
         );
       },
       icon: Icon(Icons.logout),
-      label: Text("Log Out"),
+      label: Text("home_exit".i18n()),
     );
   }
 }

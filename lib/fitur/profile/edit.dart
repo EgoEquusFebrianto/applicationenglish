@@ -1,6 +1,7 @@
 import 'package:applicationenglish/fitur/profile/provider/profileProv.dart';
 import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:provider/provider.dart';
 
 class Edit extends StatefulWidget {
@@ -38,7 +39,7 @@ class _EditState extends State<Edit> {
         backgroundColor: theme.appBarTheme.backgroundColor,
         iconTheme: theme.iconTheme,
         title: Text(
-          "Edit Profile",
+          "profile_edit_appbarlabel".i18n(),
           style: theme.appBarTheme.titleTextStyle,
         ),
       ),
@@ -51,8 +52,8 @@ class _EditState extends State<Edit> {
               controller: namaController,
               style: TextStyle(color: theme.colorScheme.secondary),
               decoration: InputDecoration(
-                labelText: "Nama",
-                hintText: "Masukkan Nama",
+                labelText: "profile_edit_name".i18n(),
+                hintText: "profile_edit_name_label".i18n(),
                 labelStyle: TextStyle(color: theme.colorScheme.secondary),
                 hintStyle: TextStyle(color: theme.colorScheme.secondary.withOpacity(0.5)),
                 border: OutlineInputBorder(
@@ -66,8 +67,8 @@ class _EditState extends State<Edit> {
               controller: telpController,
               style: TextStyle(color: theme.colorScheme.secondary),
               decoration: InputDecoration(
-                labelText: "Telepon",
-                hintText: "Masukkan Nomor Telepon",
+                labelText: "profile_edit_telp".i18n(),
+                hintText: "profile_edit_telp_label".i18n(),
                 labelStyle: TextStyle(color: theme.colorScheme.secondary),
                 hintStyle: TextStyle(color: theme.colorScheme.secondary.withOpacity(0.5)),
                 border: OutlineInputBorder(
@@ -90,7 +91,7 @@ class _EditState extends State<Edit> {
                     context.read<FirestoreInterface>().updateDocument(_data).then((_) {
                       context.read<FirestoreInterface>().fetchDocument();
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Profile updated successfully!')),
+                      SnackBar(content: Text('profile_edit_snackbar'.i18n())),
                     );
 
                     Future.delayed(Duration(seconds: 2), () {
@@ -102,8 +103,8 @@ class _EditState extends State<Edit> {
                   }
                 },
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                child: const Text(
-                  "Save",
+                child: Text(
+                  "profile_edit_save".i18n(),
                   style: TextStyle(color: Colors.white),
                 ),
               ),

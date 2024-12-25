@@ -1,5 +1,6 @@
 import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:provider/provider.dart';
 
 class AboutYeah extends StatelessWidget {
@@ -8,11 +9,11 @@ class AboutYeah extends StatelessWidget {
     var theme = Provider.of<SwitchModeProvider>(context).themeData;
     return Scaffold(
       appBar: AppBar(
-        title: Text('About', style: theme.appBarTheme.titleTextStyle,),
+        title: Text('profile_about_us'.i18n(), style: theme.appBarTheme.titleTextStyle,),
         backgroundColor: theme.appBarTheme.backgroundColor,
         iconTheme: theme.iconTheme,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back), // IDK
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -54,7 +55,7 @@ class AboutUsSection extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
-              'Welcome to the English Learning Application Based on Games. Here, you will enhance your English skills through interactive features such as word matching, translation, dictionary, and constructing sentences.',
+              'profile_about_us1'.i18n(),
               style: TextStyle(fontSize: 16, color: theme.primaryColor),
               textAlign: TextAlign.justify,
             ),
@@ -76,7 +77,7 @@ class WhyChoose extends StatelessWidget {
         Align(
           alignment: Alignment.center,
           child: Text(
-            'Why Choose Us?',
+            'profile_about_us2'.i18n(),
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -90,44 +91,44 @@ class WhyChoose extends StatelessWidget {
           children: [
             ListTile(
               title: Text(
-                'Interactive and Friendly',
+                'profile_about_us3'.i18n(),
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: theme.primaryColor),
               ),
               subtitle: Text(
-                'Our content is designed to be engaging and user-friendly, making learning enjoyable and effective.',
+                'profile_about_us4'.i18n(),
                 style: TextStyle(fontSize: 16, color: theme.primaryColor),
                 textAlign: TextAlign.justify,
               ),
             ),
             ListTile(
               title: Text(
-                'Learn While Playing',
+                'profile_about_us5'.i18n(),
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: theme.primaryColor),
               ),
               subtitle: Text(
-                'Our application integrates game mechanics to make learning English fun and motivating.',
+                'profile_about_us6'.i18n(),
                 style: TextStyle(fontSize: 16, color: theme.primaryColor),
                 textAlign: TextAlign.justify,
               ),
             ),
             ListTile(
               title: Text(
-                'Challenging and Logical',
+                'profile_about_us7'.i18n(),
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: theme.primaryColor),
               ),
               subtitle: Text(
-                'Our levels are designed to challenge your logic and problem-solving skills, enhancing your cognitive abilities.',
+                'profile_about_us8'.i18n(),
                 style: TextStyle(fontSize: 16, color: theme.primaryColor),
                 textAlign: TextAlign.justify,
               ),
             ),
             ListTile(
               title: Text(
-                'Variety of Features',
+                'profile_about_us9'.i18n(),
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: theme.primaryColor),
               ),
               subtitle: Text(
-                'We offer a wide range of features, including word matching, sentence construction, translation, and more.',
+                'profile_about_us10'.i18n(),
                 style: TextStyle(fontSize: 16, color: theme.primaryColor),
                 textAlign: TextAlign.justify,
               ),
@@ -146,7 +147,7 @@ class TheTeamHeader extends StatelessWidget {
     return Align(
       alignment: Alignment.center,
       child: Text(
-        'THE TEAM',
+        '',
         style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
@@ -167,7 +168,7 @@ class FeaturesSection extends StatelessWidget {
         Align(
           alignment: Alignment.center,
           child: Text(
-            'FEATURES',
+            'profile_about_us13'.i18n(),
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -179,11 +180,11 @@ class FeaturesSection extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.translate, color: theme.primaryColor,),
           title: Text(
-            'Translation Games',
+            'profile_about_us14'.i18n(),
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: theme.primaryColor,),
           ),
           subtitle: Text(
-            'Enhance your translation skills by translating words and sentences between English and your native language.',
+            'profile_about_us15'.i18n(),
             style: TextStyle(fontSize: 16, color: theme.primaryColor,),
             textAlign: TextAlign.justify,
           ),
@@ -191,11 +192,11 @@ class FeaturesSection extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.spellcheck, color: Colors.blue),
           title: Text(
-            'Word Matching',
+            'profile_about_us16'.i18n(),
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: theme.primaryColor,),
           ),
           subtitle: Text(
-            'Match English words with their meanings or synonyms to improve your vocabulary.',
+            'profile_about_us17'.i18n(),
             style: TextStyle(fontSize: 16, color: theme.primaryColor,),
             textAlign: TextAlign.justify,
           ),
@@ -203,11 +204,11 @@ class FeaturesSection extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.sentiment_satisfied, color: Colors.blue),
           title: Text(
-            'Sentence Construction',
+            'profile_about_us18'.i18n(),
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: theme.primaryColor,),
           ),
           subtitle: Text(
-            'Construct grammatically correct sentences from given words, enhancing your grammar and syntax skills.',
+            'profile_about_us19'.i18n(),
             style: TextStyle(fontSize: 16, color: theme.primaryColor,),
             textAlign: TextAlign.justify,
           ),
@@ -215,11 +216,11 @@ class FeaturesSection extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.book, color: Colors.blue),
           title: Text(
-            'Interactive Dictionary',
+            'profile_about_us20'.i18n(),
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: theme.primaryColor,),
           ),
           subtitle: Text(
-            'Access a comprehensive dictionary with audio pronunciations, example sentences, and more.',
+            'profile_about_us21'.i18n(),
             style: TextStyle(fontSize: 16, color: theme.primaryColor,),
             textAlign: TextAlign.justify,
           ),
