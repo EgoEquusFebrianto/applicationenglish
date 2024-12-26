@@ -1,7 +1,9 @@
 import 'package:applicationenglish/Home.dart';
+import 'package:applicationenglish/fitur/login_and_regist/HomeHelper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 import 'auth_firebase.dart';
 
@@ -102,6 +104,8 @@ class _LoginScreenState extends State<LoginScreen> {
   void _onSubmitAnimationCompleted() async {
     if (_onLoginSession || _onSignUpSession) {
       await _auth.getUserInfo(uidUser!).then((res) {
+        Provider.of<UserProvider>(context, listen: false).setUserData(res!, uidUser!);
+
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(

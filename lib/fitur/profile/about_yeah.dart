@@ -147,7 +147,7 @@ class TheTeamHeader extends StatelessWidget {
     return Align(
       alignment: Alignment.center,
       child: Text(
-        '',
+        'profile_about_us11'.i18n(),
         style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,

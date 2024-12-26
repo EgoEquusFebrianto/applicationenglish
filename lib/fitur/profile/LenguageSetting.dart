@@ -1,3 +1,5 @@
+import 'package:applicationenglish/Home.dart';
+import 'package:applicationenglish/fitur/login_and_regist/HomeHelper.dart';
 import 'package:applicationenglish/fitur/profile/provider/switchProvider.dart';
 import 'package:applicationenglish/MainProviderSystem.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,7 @@ class LenguageSet extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Provider.of<SwitchModeProvider>(context).themeData;
     var localeProvider = Provider.of<LocaleProvider>(context);
+    var userProvider = Provider.of<UserProvider>(context); 
 
     return Scaffold(
       appBar: AppBar(
@@ -34,9 +37,27 @@ class LenguageSet extends StatelessWidget {
             const SizedBox(height: 20),
             LanguageSelector(
               currentLocale: localeProvider.locale,
-              onLocaleChange: (Locale newLocale) {
+              onLocaleChange: (Locale newLocale) async {
                 localeProvider.setLocale(newLocale);
-                Navigator.pop(context);  // Kembali ke halaman sebelumnya
+                showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (BuildContext context) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                );
+                await Future.delayed(const Duration(seconds: 1));
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home(
+                    dataUser: userProvider.dataUser,
+                    uid: userProvider.uid,
+                  )),
+                  (Route<dynamic> route) => false,
+                );
+                // Navigator.pop(context);
               },
             ),
           ],

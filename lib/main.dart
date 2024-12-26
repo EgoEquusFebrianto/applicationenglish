@@ -1,4 +1,5 @@
 import 'package:applicationenglish/MainProviderSystem.dart';
+import 'package:applicationenglish/fitur/login_and_regist/HomeHelper.dart';
 import 'package:applicationenglish/fitur/profile/provider/profileProv.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,7 +16,6 @@ import 'fitur/Challanges/myDictionary/_Provider.dart';
 import 'fitur/Challanges/Sentences/HandlerButton_prov.dart';
 import 'fitur/Challanges/Sentences/_services.dart';
 import 'fitur/providers/translation_provider.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,32 +52,36 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => TranslationProvider()),
         ChangeNotifierProvider(create: (context) => HomeProvider()),
         ChangeNotifierProvider(create: (context) => HandlerButtonProvider()),
+        ChangeNotifierProvider(create: (context) => UserProvider()),
         ChangeNotifierProvider(create: (context) => ClickedButtonListProvider()),
-        ChangeNotifierProvider(create: (context) => LocaleProvider()), 
+        ChangeNotifierProvider(create: (context) => LocaleProvider()),
       ],
       child: Consumer<SwitchModeProvider>(builder: (context, value, _) {
-        var localeProvider = Provider.of<LocaleProvider>(context);
-        return MaterialApp(
-          supportedLocales: [
-            Locale("id", "ID"),
-            Locale("en", "US")
-          ],
-          localizationsDelegates: [
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            LocalJsonLocalization.delegate
-          ],
-          locale: localeProvider.locale,
-          localeResolutionCallback: (locale, supportedLocales) {
-            if(supportedLocales.contains(locale)) {
-              return locale;
-            }
-            return Locale("en", "US");
-          },
-          debugShowCheckedModeBanner: false,
-          title: 'Learning_App',
-          home: LoginScreen(),
-        );
+        // var localeProvider = Provider.of<LocaleProvider>(context);
+        return Consumer<LocaleProvider>(builder: (context, localeProvider, _) {
+          return MaterialApp(
+            supportedLocales: [
+              Locale("id", "ID"), 
+              Locale("en", "US")
+            ],
+            locale: localeProvider.locale,
+            localizationsDelegates: [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              LocalJsonLocalization.delegate
+            ],
+            localeResolutionCallback: (locale, supportedLocales) {
+              if (supportedLocales.contains(locale)) {
+                return locale;
+              }
+              return Locale("en", "US");
+            },
+            debugShowCheckedModeBanner: false,
+            title: 'Learning_App',
+            home: LoginScreen(),
+          );
+        });
       }),
     );
   }
