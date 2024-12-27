@@ -55,6 +55,7 @@ dependencies:
     sdk: flutter
     version: ^0.0.0
   localization: ^2.1.1
+  video_player: ^2.9.2
 
 dev_dependencies:
   flutter_test:
@@ -89,6 +90,7 @@ flutter:
     - assets/pict/icons/button translate.webp
     - assets/pict/icons/vocabullary.jpg
     - lib/i18n/
+    - assets/sample_video.mp4
     
   # To add assets to your application, add an assets section, like this:
   # assets:

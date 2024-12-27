@@ -1,4 +1,6 @@
 import 'package:applicationenglish/fitur/profile/provider/profileProv.dart';
+import 'package:applicationenglish/fitur/treasure/animated_button.dart';
+import 'package:applicationenglish/fitur/treasure/video_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -26,18 +28,20 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Provider.of<SwitchModeProvider>(context).themeData;
     var firestore = Provider.of<FirestoreInterface>(context);
-    
+
     Future.microtask(() {
-      if(firestore.uid == "") firestore.setUid(uid);
-      if(firestore.data == null) firestore.catchUser();
-      });
-    
+      if (firestore.uid == "") firestore.setUid(uid);
+      if (firestore.data == null) firestore.catchUser();
+    });
+
     return Consumer<HomeProvider>(
       builder: (context, homeProvider, child) {
         return Scaffold(
           appBar: AppBar(
             title: Text(
-              homeProvider.selectedIndex == 0 ? "home_header1".i18n() : "home_header2".i18n(),
+              homeProvider.selectedIndex == 0
+                  ? "home_header1".i18n()
+                  : "home_header2".i18n(),
               style: theme.appBarTheme.titleTextStyle,
               // style: const TextStyle(color: Colors.white),
             ),
@@ -83,6 +87,9 @@ class Home extends StatelessWidget {
                   _buildFeatureCard(context),
                   const SizedBox(height: 20),
                   _buildTranslationCard(context),
+                  const SizedBox(height: 20),
+                  _buildActionButtons(context),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
@@ -192,6 +199,37 @@ class Home extends StatelessWidget {
                   .translateText(context),
         );
       },
+    );
+  }
+
+  Widget _buildActionButtons(BuildContext context) {
+    final videoProvider = Provider.of<VideoProvider>(context);
+
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              print("Button 1 Pressed!");
+              videoProvider.setIsolated(1);
+              videoProvider.setSession(1);
+            },
+            child: Text('WIP'),
+          ),
+          SizedBox(height: 10),
+          ElevatedButton(
+            onPressed: () {
+              print("Button 2 Pressed!");
+              videoProvider.setIsolated(1);
+              videoProvider.setSession(1);
+            },
+            child: Text('WIP'),
+          ),
+          AnimatedButtonChest(),
+        ],
+      ),
     );
   }
 

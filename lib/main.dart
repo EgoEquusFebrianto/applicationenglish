@@ -1,6 +1,7 @@
 import 'package:applicationenglish/MainProviderSystem.dart';
 import 'package:applicationenglish/fitur/login_and_regist/HomeHelper.dart';
 import 'package:applicationenglish/fitur/profile/provider/profileProv.dart';
+import 'package:applicationenglish/fitur/treasure/video_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => UserProvider()),
         ChangeNotifierProvider(create: (context) => ClickedButtonListProvider()),
         ChangeNotifierProvider(create: (context) => LocaleProvider()),
+        ChangeNotifierProvider(create: (context) => VideoProvider('assets/sample_video.mp4')),
       ],
       child: Consumer<SwitchModeProvider>(builder: (context, value, _) {
         // var localeProvider = Provider.of<LocaleProvider>(context);
