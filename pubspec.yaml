@@ -56,6 +56,8 @@ dependencies:
     version: ^0.0.0
   localization: ^2.1.1
   video_player: ^2.9.2
+  google_mobile_ads: ^5.2.0
+  awesome_notifications: ^0.10.0
 
 dev_dependencies:
   flutter_test:
@@ -79,10 +81,6 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/dictionary.json
-    - assets/beginner.json
-    - assets/intermediate.json
-    - assets/advance.json
     - assets/pict/icons/Beginner.jpg
     - assets/pict/icons/Intermediate.jpg
     - assets/pict/icons/Upper-Intermediate.jpg

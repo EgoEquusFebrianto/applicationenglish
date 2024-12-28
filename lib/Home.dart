@@ -1,6 +1,6 @@
+import 'package:applicationenglish/Home_testing.dart';
 import 'package:applicationenglish/fitur/profile/provider/profileProv.dart';
 import 'package:applicationenglish/fitur/treasure/animated_button.dart';
-import 'package:applicationenglish/fitur/treasure/video_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -203,7 +203,6 @@ class Home extends StatelessWidget {
   }
 
   Widget _buildActionButtons(BuildContext context) {
-    final videoProvider = Provider.of<VideoProvider>(context);
 
     return Center(
       child: Row(
@@ -213,17 +212,13 @@ class Home extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               print("Button 1 Pressed!");
-              videoProvider.setIsolated(1);
-              videoProvider.setSession(1);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => TestingForSqflite()));
             },
             child: Text('WIP'),
           ),
-          SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
               print("Button 2 Pressed!");
-              videoProvider.setIsolated(1);
-              videoProvider.setSession(1);
             },
             child: Text('WIP'),
           ),

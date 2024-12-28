@@ -121,8 +121,7 @@ class WordTile extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
             onTap: () {
-              Provider.of<WordProvider>(context, listen: false)
-                  .toggleExpanded(word['id']);
+              Provider.of<WordProvider>(context, listen: false).toggleExpanded(word['id']);
             },
             contentPadding: EdgeInsets.symmetric(horizontal: 5),
           ),

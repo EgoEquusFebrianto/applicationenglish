@@ -45,7 +45,9 @@ class FirestoreInterface extends ChangeNotifier {
           name: updateData['NewName'],
           telp: updateData['NewNumberPhone'],
           statistic: data!.statistic,
-          exp: data!.exp);
+          exp: data!.exp,
+          reward: data!.reward
+          );
       await db
           .collection("ListofUserApp")
           .doc(uid)
@@ -53,6 +55,26 @@ class FirestoreInterface extends ChangeNotifier {
       notifyListeners(); // Memanggil notifyListeners untuk memperbarui UI
     } catch (e) {
       print('Error saat mengupdate dokumen: $e');
+    }
+  }
+
+  Future<void> updateReward(Map<String, dynamic> updateData) async {
+    try {
+      _data = FirestoreModel(
+        name: data!.name, 
+        telp: data!.telp, 
+        statistic: data!.exp, 
+        exp: data!.exp, 
+        reward: updateData
+      );
+
+      await db
+        .collection("ListofUserApp")
+        .doc(uid)
+        .update({"rewad": _data?.reward});
+      notifyListeners();
+    } catch(err) {
+      print('Error saat mengupdate dokumen: $err');
     }
   }
 
@@ -72,6 +94,10 @@ class FirestoreInterface extends ChangeNotifier {
             exp: {
               "PlayerLevel": 0,
               "experience": 0
+            },
+            reward: {
+              "admob": [],
+              "general": []
             }
           );
       // await db.collection("ListofUserApp").add(insertData.toMap());

@@ -5,12 +5,14 @@ class FirestoreModel {
   final String telp;
   final Map<String, dynamic> statistic;
   final Map<String, dynamic> exp;
+  final Map<String, dynamic> reward;
 
   FirestoreModel({
     required this.name,
     required this.telp,
     required this.statistic,
     required this.exp,
+    required this.reward,
   });
 
   Map<String, dynamic> toMap() {
@@ -19,6 +21,7 @@ class FirestoreModel {
       'telp': telp,
       'statistic': statistic,
       'exp': exp,
+      'reward': reward
     };
   }
   
@@ -28,6 +31,7 @@ class FirestoreModel {
       telp: doc.data()?['telp'] ?? '',
       statistic: doc.data()?['statistic'] ?? {},
       exp: doc.data()?['exp'] ?? {},
+      reward: doc.data()?['reward'] ?? {}
     );
   }
 }

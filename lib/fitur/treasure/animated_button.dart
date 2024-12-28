@@ -16,10 +16,16 @@ class AnimatedButtonChest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final videoProvider = Provider.of<VideoProvider>(context);
-    print("<AB.dart said> session1 -> ${videoProvider.session1} dan session2 ${videoProvider.session2} dan isolated -> ${videoProvider.isolated}");
     return GestureDetector(
       onTap: () {
-        videoProvider.setSession(2);
+        videoProvider.loadRewardedAd();
+        if (videoProvider.rewardedAd == null) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Iklan belum dimuat. Coba lagi nanti.')));
+          return;
+        } else {
+          videoProvider.setSession(2);
+          videoProvider.triggerDialogAfterDelay(context);
+        }
       },
       child: videoProvider.controller.value.isInitialized
           ? Container(
