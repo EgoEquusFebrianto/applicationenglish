@@ -55,5 +55,16 @@
     "profile_contact_info": "Here is our contact information for further inquiries:\n\nName: TEAM L\nEmail: MahasiswaSmster5@mikroskil.ac.id\nPhone: 082234548960\n\nPlease feel free to contact us if you have any questions or need further assistance.\n\nThank you.",
     "tmp_appbarlabel": "Challange",
     "setLanguage": "Language Setting",
-    "setLanguage_info": "Select Language:"
+    "setLanguage_info": "Select Language:",
+    "reward_Massage": "",
+    "reward": "",
+    "reward_info": "",
+    "reward_fail": "",
+    "reward_fail_proccess": "",
+    "reward_on": "",
+    "reward_denied": "",
+    "reward_ad": "",
+    "reward_ad_info": "",
+    "reward_ad_on": "",
+    "reward_ad_denied": ""
 }

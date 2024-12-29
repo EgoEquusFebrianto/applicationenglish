@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
 import 'video_provider.dart';
@@ -18,9 +19,9 @@ class AnimatedButtonChest extends StatelessWidget {
     final videoProvider = Provider.of<VideoProvider>(context);
     return GestureDetector(
       onTap: () {
-        videoProvider.loadRewardedAd();
+        videoProvider.loadRewardedAd(context);
         if (videoProvider.rewardedAd == null) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Iklan belum dimuat. Coba lagi nanti.')));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("reward_Massage".i18n())));
           return;
         } else {
           videoProvider.setSession(2);

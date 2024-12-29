@@ -55,5 +55,16 @@
     "profile_contact_info": "Berikut adalah informasi kontak kami untuk pertanyaan lebih lanjut:\n\nNama: TIM L\nEmail: MahasiswaSmster5@mikroskil.ac.id\nTelepon: 082234548960\n\nJangan ragu untuk menghubungi kami jika Anda memiliki pertanyaan atau membutuhkan bantuan lebih lanjut.\n\nTerima kasih.",
     "tmp_appbarlabel": "Tantangan",
     "setLanguage": "Pengaturan Bahasa",
-    "setLanguage_info": "Pilih Bahasa:"
+    "setLanguage_info": "Pilih Bahasa:",
+    "reward_Massage": "Iklan belum dimuat. Coba lagi nanti.",
+    "reward": "Hore, Hadiah!",
+    "reward_info": "Anda mendapatkan 5 tambahan koleksi kamus, untuk menambah kosakata Anda",
+    "reward_fail": "Gagal menampilkan iklan, coba lagi.",
+    "reward_fail_proccess": "Proses Gagal, Iklan Tidak Dapat Dimuat.",
+    "reward_on": "Terima",
+    "reward_denied": "tolak",
+    "reward_ad": "Ada Tambahan!",
+    "reward_ad_info": "Anda bisa dapat 5 tambahan koleksi lagi, bila menonton iklan.",
+    "reward_ad_on": "Tampilkan Iklan",
+    "reward_ad_denied": "Tidak"
 }

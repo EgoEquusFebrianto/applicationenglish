@@ -89,6 +89,8 @@ void scheduleDailyNotification() async {
       hour: notificationTime.hour,
       minute: notificationTime.minute,
       second: 0,
+      preciseAlarm: true,
+      allowWhileIdle: true,
       timeZone: await AwesomeNotifications().getLocalTimeZoneIdentifier(),
       repeats: true,
     ),
@@ -121,6 +123,7 @@ Future<void> main() async {
   MobileAds.instance.initialize();
   bool isLoggedIn = await _getLoginStatus();
   await _initializeNotifications();
+  await AwesomeNotifications().cancelAll();
   ensureDailyNotificationScheduled();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
