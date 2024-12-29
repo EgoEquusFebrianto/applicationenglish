@@ -7,14 +7,18 @@
     "home_info": "Tentang",
     "home_mode": "Mode Gelap",
     "home_exit": "Keluar",
+
     "TC_textfield": "Masukkan teks yang ingin diterjemahkan",
     "TC_elevatedbuttonlabel": "Terjemahkan",
+
     "sentences_appbarlabel": "Pilih Tingkat Kesulitan",
     "sentences_level1": "Pemula",
     "sentences_level2": "Menegah",
     "sentences_level3": "Lanjutan",
+
     "translate_appbarlabel": "Cocokkan Kata!",
     "translate_next": "Selanjutnya",
+
     "profile_set" : "Pengaturan",
     "profile_language" : "Pilih Bahasa",
     "profile_edit" : "Ubah Profil",
@@ -56,15 +60,18 @@
     "tmp_appbarlabel": "Tantangan",
     "setLanguage": "Pengaturan Bahasa",
     "setLanguage_info": "Pilih Bahasa:",
-    "reward_Massage": "Iklan belum dimuat. Coba lagi nanti.",
+
+    "reward_Massage": "Gagal terhubung ke Server. Coba lagi nanti.",
     "reward": "Hore, Hadiah!",
     "reward_info": "Anda mendapatkan 5 tambahan koleksi kamus, untuk menambah kosakata Anda.",
-    "reward_fail": "Gagal menampilkan iklan, coba lagi.",
-    "reward_fail_proccess": "Proses Gagal, Iklan Tidak Dapat Dimuat.",
     "reward_on": "Terima",
     "reward_denied": "Tolak",
+
+    "reward_fail_proccess": "Proses Gagal, Iklan Tidak Dapat Dimuat.",
+
     "reward_ad": "Ada Tambahan!",
     "reward_ad_info": "Anda bisa dapat 5 tambahan koleksi lagi, bila menonton iklan.",
+    "reward_ad_fail": "Iklan belum dimuat. Coba lagi nanti.",
     "reward_ad_on": "Tampilkan Iklan",
     "reward_ad_denied": "Tidak"
 }

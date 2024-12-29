@@ -7,14 +7,18 @@
     "home_info": "About",
     "home_mode": "Dark Mode",
     "home_exit": "Log Out",
+
     "TC_textfield": "Enter text to translate",
     "TC_elevatedbuttonlabel": "Translate",
     "sentences_appbarlabel": "Select Difficulty Level",
+
     "sentences_level1": "Beginner",
     "sentences_level2": "Intermediate",
     "sentences_level3": "Advanced",
+
     "translate_appbarlabel": "Match the Words!",
     "translate_next": "Next",
+
     "profile_set" : "Settings",
     "profile_language" : "Leangue Settings",
     "profile_edit" : "Edit Profile",
@@ -56,15 +60,18 @@
     "tmp_appbarlabel": "Challange",
     "setLanguage": "Language Setting",
     "setLanguage_info": "Select Language:",
-    "reward_Massage": "Ad has not loaded yet. Please try again later.",
+
+    "reward_Massage": "Failed to connect to Server. Please try again later.",
     "reward": "Hooray, Prizes!",
     "reward_info": "You get 5 additional dictionary collections, to increase your vocabulary.",
-    "reward_fail": "Failed to display ad, please try again.",
-    "reward_fail_proccess": "Process Failed, Ad Cannot Be Loaded.",
     "reward_on": "Accept",
     "reward_denied": "Reject",
+
+    "reward_fail_proccess": "Process Failed, Ad Cannot Be Loaded.",
+
     "reward_ad": "There's more!",
     "reward_ad_info": "You can get 5 additional collections, by watching ads.",
+    "reward_ad_fail": "Ad has not loaded yet. Please try again later.",
     "reward_ad_on": "Show ads",
     "reward_ad_denied": "No"
 }
