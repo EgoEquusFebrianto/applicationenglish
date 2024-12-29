@@ -166,88 +166,88 @@ class VideoProvider with ChangeNotifier {
     setSession(1);
   }
 
-  // void triggerDialogAfterDelay(BuildContext context) {
-  //   Timer(Duration(seconds: 1, milliseconds: 850), () {
-  //     showDialog(
-  //       context: context,
-  //       barrierDismissible: false,
-  //       builder: (BuildContext context) {
-  //         return AlertDialog(
-  //           title: Text('reward'.i18n()),
-  //           content: Text('reward_info'.i18n()),
-  //           actions: [
-  //             TextButton(
-  //               onPressed: () {
-  //                   adSession(context);
-  //                   setIsolated(1);
-  //                   setSession(1);
-  //                   Navigator.of(context).pop();
-  //               },
-  //               child: Text('reward_on'.i18n()),
-  //             ),
-  //             TextButton(
-  //               onPressed: () {
-  //                 setIsolated(1);
-  //                 setSession(1);
-  //                 Navigator.of(context).pop();
-  //               },
-  //               child: Text('reward_denied'.i18n()),
-  //             ),
-  //           ],
-  //         );
-  //       },
-  //     );
-  //   });
-  // }
+  void triggerDialogAfterDelay(BuildContext context) {
+    Timer(Duration(seconds: 1, milliseconds: 850), () {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('reward'.i18n()),
+            content: Text('reward_info'.i18n()),
+            actions: [
+              TextButton(
+                onPressed: () {
+                    adSession(context);
+                    setIsolated(1);
+                    setSession(1);
+                    Navigator.of(context).pop();
+                },
+                child: Text('reward_on'.i18n()),
+              ),
+              TextButton(
+                onPressed: () {
+                  setIsolated(1);
+                  setSession(1);
+                  Navigator.of(context).pop();
+                },
+                child: Text('reward_denied'.i18n()),
+              ),
+            ],
+          );
+        },
+      );
+    });
+  }
 
-  // void adSession(BuildContext context) {
-  //     showDialog(
-  //       context: context,
-  //       barrierDismissible: false,
-  //       builder: (BuildContext context) {
-  //         return AlertDialog(
-  //           title: Text('reward_ad'.i18n()),
-  //           content: Text('reward_ad_info'.i18n()),
-  //           actions: [
-  //             TextButton(
-  //               onPressed: () {
-  //                 _rewardedAd!.show(
-  //                   onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
-  //                     print('User mendapatkan reward: ${reward.amount}');
+  void adSession(BuildContext context) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('reward_ad'.i18n()),
+            content: Text('reward_ad_info'.i18n()),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  _rewardedAd!.show(
+                    onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
+                      print('User mendapatkan reward: ${reward.amount}');
                       
-  //                     functions();
+                      functions();
 
-  //                     // Logika untuk memberikan hadiah bisa ditambahkan di sini, berupa
-  //                     // 1. logika untuk hadiah yang diberikan secara umum adalah 5 koleksi kata baru di kamus;
-  //                     // 2. logika untuk hadiah tambahan 5 kolokesi kata lagi bila izin iklan diberikan;
+                      // Logika untuk memberikan hadiah bisa ditambahkan di sini, berupa
+                      // 1. logika untuk hadiah yang diberikan secara umum adalah 5 koleksi kata baru di kamus;
+                      // 2. logika untuk hadiah tambahan 5 kolokesi kata lagi bila izin iklan diberikan;
 
-  //                   },
-  //                 ).then((value) {
-  //                   setIsolated(1);
-  //                   setSession(1);
-  //                   Navigator.of(context).pop();
-  //                 }).catchError((error) {
-  //                   setIsolated(1);
-  //                   setSession(1);
-  //                   Navigator.of(context).pop();
-  //                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('reward_ad_fail'.i18n())));
-  //                 });
-  //               },
-  //               child: Text('reward_ad_on'.i18n()),
-  //             ),
-  //             TextButton(
-  //               onPressed: () {
-  //                 setIsolated(1);
-  //                 setSession(1);
-  //                 Navigator.of(context).pop();
-  //               },
-  //               child: Text('reward_ad_denied'.i18n()),
-  //             ),
-  //           ],
-  //         );
-  //       },
-  //     );
-  // }
+                    },
+                  ).then((value) {
+                    setIsolated(1);
+                    setSession(1);
+                    Navigator.of(context).pop();
+                  }).catchError((error) {
+                    setIsolated(1);
+                    setSession(1);
+                    Navigator.of(context).pop();
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('reward_ad_fail'.i18n())));
+                  });
+                },
+                child: Text('reward_ad_on'.i18n()),
+              ),
+              TextButton(
+                onPressed: () {
+                  setIsolated(1);
+                  setSession(1);
+                  Navigator.of(context).pop();
+                },
+                child: Text('reward_ad_denied'.i18n()),
+              ),
+            ],
+          );
+        },
+      );
+  }
 
   void loadRewardedAd(BuildContext context) {
     RewardedAd.load(
