@@ -56,15 +56,17 @@ samples, guidance on mobile development, and a full API reference.
 ## Setup
 
 ### Prerequisites
-- Python 3.x
-- Flutter (for mobile application development)
-- Spark (for any backend processing, if applicable)
+- Android Studio
+- Flutter SDK(for mobile application development)
+- Java Development tool
 
 ### Installation
-To get started with this project, follow the steps below:
 
-1. Clone the repository.
-2. Install the required dependencies by running:
+Ikuti langkah-langkah berikut untuk menginstal dan mengatur proyek:
 
-```bash
-pip install -r requirements.txt
+1. **Clone Repository**
+
+   Clone repository ini ke mesin lokal Anda:
+
+   ```bash
+   git clone https://github.com/username/repository-name.git
