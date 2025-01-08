@@ -71,7 +71,7 @@ Ikuti langkah-langkah berikut untuk menginstal dan mengatur proyek:
    Clone repository ini ke mesin lokal Anda:
 
    ```bash
-   git clone https://github.com/username/repository-name.git
+   git clone https://github.com/EgoEquusFebrianto/applicationenglish.git
 
 ### Prerequisites
 Before getting started, make sure you have the following devices and tools:
@@ -89,4 +89,4 @@ Follow these steps to install and set up the project:
    Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/username/repository-name.git
+   git clone https://github.com/EgoEquusFebrianto/applicationenglish.git
