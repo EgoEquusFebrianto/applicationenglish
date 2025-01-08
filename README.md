@@ -56,9 +56,11 @@ samples, guidance on mobile development, and a full API reference.
 ## Setup
 
 ### Prerequisites
-- Android Studio
-- Flutter SDK(for mobile application development)
-- Java Development tool
+Sebelum memulai, pastikan Anda memiliki perangkat dan alat berikut:
+
+- **Android Studio**: Digunakan untuk pengembangan aplikasi Android dan menyediakan emulator Android untuk pengujian.
+- **Flutter SDK**: Alat pengembangan untuk membuat aplikasi mobile menggunakan bahasa Dart.
+- **Java Development Kit (JDK)**: Diperlukan untuk menjalankan Flutter dan aplikasi Android. Flutter membutuhkan JDK untuk Android SDK dan alat lainnya.
 
 ### Installation
 
@@ -67,6 +69,24 @@ Ikuti langkah-langkah berikut untuk menginstal dan mengatur proyek:
 1. **Clone Repository**
 
    Clone repository ini ke mesin lokal Anda:
+
+   ```bash
+   git clone https://github.com/username/repository-name.git
+
+### Prerequisites
+Before getting started, make sure you have the following devices and tools:
+
+- **Android Studio**: Used for Android app development and provides an Android emulator for testing.
+- **Flutter SDK**: The development framework used to build mobile apps using Dart programming language.
+- **Java Development Kit (JDK)**: Required to run Flutter and Android tools. Flutter needs JDK for the Android SDK and other utilities.
+
+### Installation
+
+Follow these steps to install and set up the project:
+
+1. **Clone Repository**
+
+   Clone this repository to your local machine:
 
    ```bash
    git clone https://github.com/username/repository-name.git
