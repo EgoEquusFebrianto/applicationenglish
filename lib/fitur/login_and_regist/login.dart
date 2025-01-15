@@ -21,20 +21,6 @@ class _LoginScreenState extends State<LoginScreen> {
   String? uidUser;
 
   @override
-  void initState() {
-    super.initState();
-    _auth.signIn("asd@gmail.com", "zzzzzz").then((_uid) {
-      _auth.getUserInfo(_uid!).then((_dataUser) {
-        Provider.of<UserProvider>(context, listen: false).setUserData(_dataUser!, _uid);
-        Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) => Home(dataUser: _dataUser, uid: _uid)));
-      });
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return FlutterLogin(
       onLogin: _onLogin,
