@@ -87,12 +87,12 @@ class _EditState extends State<Edit> {
                     Map<String, dynamic> _data = {
                       "NewName": namaController.text,
                       "NewNumberPhone": telpController.text,
+
+                      
                     };
                     context.read<FirestoreInterface>().updateDocument(_data).then((_) {
                       context.read<FirestoreInterface>().fetchDocument();
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('profile_edit_snackbar'.i18n())),
-                    );
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('profile_edit_snackbar'.i18n())),);
 
                     Future.delayed(Duration(seconds: 2), () {
                       Navigator.pop(context);

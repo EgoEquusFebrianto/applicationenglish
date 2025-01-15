@@ -10,8 +10,7 @@ class MyauthFirebase {
   // Fungsi sign up menggunakan Firebase Authentication
   Future<String?> signUp(String email, String pass) async {
     try {
-      UserCredential authRes =
-          await _firebaseAuth.createUserWithEmailAndPassword(
+      UserCredential authRes = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: pass,
       );

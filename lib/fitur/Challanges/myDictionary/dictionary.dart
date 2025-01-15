@@ -54,7 +54,7 @@ class WordListScreen extends StatelessWidget {
         // Use FutureBuilder to load words asynchronously
         backgroundColor: theme.scaffoldBackgroundColor,
         body: FutureBuilder(
-          future: Provider.of<WordProvider>(context, listen: false).loadingData(),
+          future: Provider.of<WordProvider>(context, listen: false).dataInitialize(context),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(child: CircularProgressIndicator());
@@ -102,8 +102,7 @@ class WordTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isExpanded =
-        Provider.of<WordProvider>(context).selector == word['id'];
+    final isExpanded = Provider.of<WordProvider>(context).selector == word['id'];
 
     return Container(
       decoration: BoxDecoration(
@@ -130,8 +129,7 @@ class WordTile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children:
-                    (word['translate'] as List<dynamic>).map((translation) {
+                children: (word['translate'] as List<dynamic>).map((translation) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 2.0),
                     child: Text(
@@ -200,8 +198,7 @@ class SortOptionsSheet extends StatelessWidget {
         groupValue: groupValue,
         onChanged: (String? newValue) {
           if (newValue != null) {
-            Provider.of<WordProvider>(context, listen: false)
-                .setSortingType(newValue);
+            Provider.of<WordProvider>(context, listen: false).setSortingType(newValue);
             Navigator.pop(context);
           }
         },

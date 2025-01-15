@@ -25,8 +25,7 @@ class UserDictionary {
     return UserDictionary(
       id: map['id'],
       word: map['word'],
-      translate: map['translate'] != null
-          ? (map['translate'] as String).split(',') : [],
+      translate: map['translate'] != null? (map['translate'] as String).split(',') : [],
       tabs_bar: map['tabs_bar'] ?? "Sedang Dipelajari",
     );
   }

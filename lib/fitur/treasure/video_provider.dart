@@ -1,17 +1,16 @@
 import 'dart:async';
-import 'dart:convert';
+
+import 'package:applicationenglish/fitur/Challanges/myDictionary/_Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
+import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:http/http.dart' as http;
 
 class VideoProvider with ChangeNotifier {
   final String videoPath;
   late VideoPlayerController _controller;
   RewardedAd? _rewardedAd;
-  Map<String, dynamic> getReward = {};
-  bool acceptedProccess = false;
   bool session1 = true;
   bool session2 = false;
   bool isolated = true;
@@ -140,7 +139,7 @@ class VideoProvider with ChangeNotifier {
       _rewardedAd!.show(
         onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
           print('User mendapatkan reward: ${reward.amount}');
-          functions();
+          Provider.of<WordProvider>(context).functions();
         },
       ).then((_) {
         _resetSession();
@@ -177,31 +176,5 @@ class VideoProvider with ChangeNotifier {
         },
       ),
     );
-  }
-  
-  void FunctionGetterData() async{
-    const jsonUrl = "https://raw.githubusercontent.com/EgoEquusFebrianto/public_data/main/rewardAdSource.json";
-    final response = await http.get(Uri.parse(jsonUrl));
-
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      getReward = data;
-      acceptedProccess = true;
-      notifyListeners();
-    } else {
-      throw Exception('Invalid JSON format: Expected a list of entries');
-    }
-  }
-
-  void InitializeCodeReward() async {
-    
-    
-  }
-
-  void functions() {
-    FunctionGetterData();
-    if(acceptedProccess) {
-      InitializeCodeReward();
-    }
   }
 }

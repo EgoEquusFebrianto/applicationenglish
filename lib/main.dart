@@ -122,8 +122,9 @@ Future<void> main() async {
   await Firebase.initializeApp();
   MobileAds.instance.initialize();
   bool isLoggedIn = await _getLoginStatus();
+  await AwesomeNotifications().resetGlobalBadge();
+  await AwesomeNotifications().setGlobalBadgeCounter(0);
   await _initializeNotifications();
-  await AwesomeNotifications().cancelAll();
   ensureDailyNotificationScheduled();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

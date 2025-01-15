@@ -1,18 +1,42 @@
+import 'package:applicationenglish/fitur/profile/provider/profileProv.dart';
 import 'package:applicationenglish/fitur/sqflite/database_helper.dart';
 import 'package:applicationenglish/fitur/sqflite/dictionaryClass.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 class WordProvider with ChangeNotifier {
   String? selector;
   List<dynamic> elementDict = [];
   String sortingType = 'id_asc';
 
+  Map<String, dynamic> getkeys = {};
+  Map<String, dynamic> getReward = {};
+  bool acceptedProccess = false;
+  int totalReward = 0;
+
+  int get lengthfetch => elementDict.length;
+  int totalCollection =  0;
+
+  void setTotalReward() {
+    getReward.forEach((key, value) {
+      totalReward += value.length as int;
+      notifyListeners();
+    });
+  }
+
+
   final DatabaseHelper _dbHelper = DatabaseHelper();
 
-  WordProvider() {
-    loadingData();
+  Future<void> dataInitialize(BuildContext context) async {
+    final fireStore = Provider.of<FirestoreInterface>(context, listen: false);
+
+    loadingData().then((_) {
+      
+      FunctionGetterData();
+
+    });
   }
 
 Future<void> _saveToDatabase() async {
@@ -93,6 +117,31 @@ Future<void> _saveToDatabase() async {
       case 'word_desc':
         elementDict.sort((a, b) => b['word'].compareTo(a['word']));
         break;
+    }
+  }
+
+  void FunctionGetterData() async{
+    const jsonUrl = "https://raw.githubusercontent.com/EgoEquusFebrianto/public_data/main/rewardAdSource.json";
+    final response = await http.get(Uri.parse(jsonUrl));
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      getReward = data;
+      acceptedProccess = true;
+      notifyListeners();
+    } else {
+      throw Exception('Invalid JSON format: Expected a list of entries');
+    }
+  }
+
+  void InitializeCodeReward() async {
+    
+  }
+
+  void functions() {
+    FunctionGetterData();
+    if(acceptedProccess) {
+      InitializeCodeReward();
     }
   }
 }
