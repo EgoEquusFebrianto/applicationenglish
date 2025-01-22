@@ -15,6 +15,7 @@ class MyauthFirebase {
         password: pass,
       );
       User? user = authRes.user;
+      
       if (user != null) {
         db.saveUserOffline(UserDefine(
           uid: user.uid,
@@ -107,14 +108,34 @@ class MyauthFirebase {
   // Fungsi login offline melalui SQLite
   Future<String?> signInOffline(String email, String password) async {
     try {
+      print("INPUT TELAH MASUK");
       UserDefine? user = await db.validateUserOffline(email, password);
       if (user != null) {
+        print("AUTENTIKASI TELAH DITERIMA");
         return user.uid; // Return UID jika user ditemukan
       }
       return null;
     } catch (e) {
+      print("AUTHENTIKASI TIDAK DAPAT DITEMUKAN");
       print("Login offline gagal: $e");
       return null;
+    }
+  }
+
+  Future<void> deleteUser(String email, String password) async {
+    try {
+      await signIn(email, password);
+      User? user = FirebaseAuth.instance.currentUser;
+
+      if (user != null) {
+        await user.delete();
+        print('User berhasil dihapus dari Firebase: $email');
+      } else {
+        print('Tidak ada user yang login untuk dihapus.');
+      }
+    } catch (e) {
+      print('Gagal menghapus user dari Firebase: $e');
+      throw e;
     }
   }
 }
