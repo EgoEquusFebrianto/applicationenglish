@@ -1,20 +1,56 @@
+import 'package:applicationenglish/fitur/sqflite/database_helper.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:applicationenglish/fitur/login_and_regist/auth_firebase.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
-  // Inisialisasi Firebase
   TestWidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
   group('Integration Test', () {
     final MyauthFirebase auth = MyauthFirebase();
-
+    final DatabaseHelper databaseHelper = DatabaseHelper();
+  
     // Kredensial pengujian
-    const email_valid = 'EMAIL VALID';
-    const email_invalid = 'EMAIL INVALID';
+    const email_valid = 'testuser@example.com';
+    const email_invalid = 'invaliduser@example.com';
     const pass_valid = 'PASSWORD VALID';
     const pass_invalid = 'PASSWORD INVALID';
+
+    setUp(() async {
+      try {
+        await auth.signUp(email_valid, pass_valid).then((uid) {
+          print("KREDENSIAL USER BARU $uid");
+        });
+        print('User berhasil dibuat di Firebase: $email_valid');
+      } catch (e) {
+        print('User sudah ada di Firebase: $email_valid');
+      }
+
+      try {
+        await databaseHelper.validateUserOffline(email_invalid, pass_invalid).then((data) {
+          print("hasilnya adalah $data");
+        });
+      } catch(e) {
+        print("ERROR DITEMUKAN => $e");
+      }
+    });
+
+    tearDown(() async {
+      try {
+        await auth.deleteUser(email_valid, pass_valid);
+        print('User berhasil dihapus dari Firebase: $email_valid');
+      } catch (e) {
+        print('Error saat menghapus user dari Firebase: $e');
+      }
+
+      try {
+        await databaseHelper.deleteUserByEmail(email_valid);
+        print('User berhasil dihapus dari SQLite: $email_valid');
+      } catch (e) {
+        print('Error saat menghapus user dari SQLite: $e');
+      }
+    });
 
     // Test untuk login dengan kredensial valid
     test('SKENARIO LOGIN FIREBASE BERHASIL dengan VALID credentials', () async {
