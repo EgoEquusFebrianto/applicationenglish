@@ -151,12 +151,21 @@ class DatabaseHelper {
   // Fungsi untuk menambahkan user ke database
   Future<void> saveUserOffline(UserDefine user) async {
     final db = await database;
-    await db.insert(
+    final existing = await db.query(
       'users',
-      user.toMap(),
-      conflictAlgorithm: ConflictAlgorithm.ignore,
+      where: 'email = ?',
+      whereArgs: [user.email],
     );
+    if (existing.isEmpty) {
+      print("USER TELAH BERHASIL DITAMBAHKAN");
+      await db.insert('users', user.toMap());
+    } else {
+      print("WARNING!!!");
+      print('User sudah ada di SQLite');
+      print("=====================================================================");
+    }
   }
+
 
 
   // Fungsi untuk validasi login offline berdasarkan email dan password
@@ -180,5 +189,17 @@ class DatabaseHelper {
     return List.generate(maps.length, (i) {
       return UserDefine.fromMap(maps[i]);
     });
+  }
+
+  Future<int> deleteUserByEmail(String email) async {
+    final db = await database;
+    try {
+      await db.delete('users', where: 'email = ?', whereArgs: [email]);
+      print("PERMINTAAN DETELE TELAH DILAKUKAN");
+      return 1;
+    } catch(e) {
+      print("PERMINTAAN DETELE DITOLAK!!! => $e");
+      return 0;
+    }
   }
 }
