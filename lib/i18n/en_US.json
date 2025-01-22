@@ -66,6 +66,8 @@
     "reward_info": "You get 5 additional dictionary collections, to increase your vocabulary.",
     "reward_on": "Accept",
     "reward_denied": "Reject",
+    "reward_pending": "Prize Giving Postponed",
+    "reward_pending_info": "The prize collection schedule has been recorded on the server and will be provided when the prize settings are available.",
 
     "reward_fail_proccess": "Process Failed, Ad Cannot Be Loaded.",
 

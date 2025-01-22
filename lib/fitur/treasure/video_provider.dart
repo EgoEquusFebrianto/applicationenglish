@@ -115,11 +115,12 @@ class VideoProvider with ChangeNotifier {
           title: Text('reward_ad'.i18n()),
           content: Text('reward_ad_info'.i18n()),
           actions: [
-            TextButton(
+            ElevatedButton.icon(
               onPressed: () {
                 _handleAdReward(context);
-              },
-              child: Text('reward_ad_on'.i18n()),
+              }, 
+              label: Text('reward_ad_on'.i18n()),
+              icon: Image.asset('assets/pict/ads.png', height: 24, width: 24,)
             ),
             TextButton(
               onPressed: () {
@@ -139,22 +140,53 @@ class VideoProvider with ChangeNotifier {
       _rewardedAd!.show(
         onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
           print('User mendapatkan reward: ${reward.amount}');
-          Provider.of<WordProvider>(context).functions();
+          
+          Provider.of<WordProvider>(context, listen: false).functions();
+
         },
       ).then((_) {
         _resetSession();
         Navigator.of(context).pop();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          _showRewardInfoDialog(context);
+        });
       }).catchError((error) {
         _resetSession();
         Navigator.of(context).pop();
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('reward_ad_fail'.i18n())),);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('reward_ad_fail'.i18n())),
+        );
       });
     } catch (e) {
       _resetSession();
       Navigator.of(context).pop();
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('reward_ad_fail'.i18n())),);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('reward_ad_fail'.i18n())),
+      );
     }
   }
+
+  void _showRewardInfoDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('reward_pending'.i18n()),
+          content: Text('reward_pending_info'.i18n()),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Ok'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
 
   void _resetSession() {
     setIsolated(1);

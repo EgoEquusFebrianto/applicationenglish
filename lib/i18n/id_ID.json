@@ -66,6 +66,8 @@
     "reward_info": "Anda mendapatkan 5 tambahan koleksi kamus, untuk menambah kosakata Anda.",
     "reward_on": "Terima",
     "reward_denied": "Tolak",
+    "reward_pending": "Pemberian Hadiah Ditunda",
+    "reward_pending_info": "Jadwal pengambilan hadiah telah direkam di server dan akan diberikan saat pengaturan hadiah tersedia.",
 
     "reward_fail_proccess": "Proses Gagal, Iklan Tidak Dapat Dimuat.",
 
